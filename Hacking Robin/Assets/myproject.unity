@@ -948,6 +948,7 @@ MonoBehaviour:
   player: {fileID: 1405205161}
   playerShot: {fileID: 2039938537}
   bulletSpeed: 3
+  shotDelay: 1
 --- !u!50 &1405205163
 Rigidbody2D:
   serializedVersion: 4

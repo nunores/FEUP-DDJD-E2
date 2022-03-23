@@ -9,8 +9,10 @@ public class CharacterMovement : MonoBehaviour
     public GameObject player;
     public GameObject playerShot;
     public int bulletSpeed;
+    public int shotDelay;
     private Queue<GameObject> currentShots = new Queue<GameObject>();
     private Rigidbody2D rb2d;
+    private bool canShoot = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,9 +38,11 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKey(KeyCode.Return) && canShoot)
         {
+            canShoot = false;
             currentShots.Enqueue(playerShooting());
+            StartCoroutine(reload());
         }
 
         Vector2 newVelocity = rb2d.velocity;
@@ -60,5 +64,11 @@ public class CharacterMovement : MonoBehaviour
         GameObject shot = (GameObject)Instantiate(playerShot);
         shot.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, 0);
         return shot;
+    }
+
+    IEnumerator reload()
+    {
+        yield return new WaitForSeconds(shotDelay);
+        canShoot = true;
     }
 }
