@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Obstacle
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -46,6 +48,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2753908101
+    locked: 0
+  - name: PlayerShot
+    uniqueID: 3645804037
     locked: 0
   - name: Coin
     uniqueID: 2729055119

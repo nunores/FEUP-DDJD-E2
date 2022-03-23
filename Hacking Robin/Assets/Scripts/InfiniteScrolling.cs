@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InfiniteScrolling : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class InfiniteScrolling : MonoBehaviour
     public GameObject currentObstacle;
     public int maxNumberOfActiveBackgrounds;
     public int maxNumberOfActiveObstacles;
+    public Text counterText;
+    private int coinCount;
     private float backgroundWidth;
     private float maxX;
     private int backgroundNumber = 0;
@@ -23,6 +26,7 @@ public class InfiniteScrolling : MonoBehaviour
     void Start()
     {
         backgroundWidth = 29.56f; //TODO: change this value when we change the sprite (hardcoded)
+        coinCount = 0;
     }
 
     // Update is called once per frame
@@ -63,6 +67,29 @@ public class InfiniteScrolling : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        col.gameObject.SetActive(false);
+        if (col.gameObject.tag == "Obstacle")
+        {
+            col.gameObject.SetActive(false);
+        }
+
+        switch (col.gameObject.tag)
+        {
+            case "Obstacle":
+                col.gameObject.SetActive(false);
+                break;
+            case "Coin":
+                col.gameObject.SetActive(false);
+                setCounterText();
+                break;
+            default:
+                break;
+        }
     }
+
+    void setCounterText()
+    {
+        coinCount++;
+        counterText.text = "Coins: " + coinCount.ToString();
+    }
+
 }
