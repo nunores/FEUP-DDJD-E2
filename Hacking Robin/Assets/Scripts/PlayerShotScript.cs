@@ -26,10 +26,21 @@ public class PlayerShotScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Obstacle")
+        if (col.gameObject.tag == "Enemy")
         {
             col.gameObject.SetActive(false);
             Destroy(playerShot);
+        }
+         switch (col.gameObject.tag)
+        {
+            case "Enemy":
+                col.gameObject.SetActive(false);
+                break;
+            case "Obstacle":
+                Destroy(playerShot);
+                break;
+            default:
+                break;
         }
     }
 }

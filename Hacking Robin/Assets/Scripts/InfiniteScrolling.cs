@@ -67,13 +67,13 @@ public class InfiniteScrolling : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Obstacle")
-        {
-            col.gameObject.SetActive(false);
-        }
+
 
         switch (col.gameObject.tag)
         {
+            case "Enemy":
+                col.gameObject.SetActive(false);
+                break;
             case "Obstacle":
                 col.gameObject.SetActive(false);
                 break;
