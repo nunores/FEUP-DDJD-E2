@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DroneBehaviour : MonoBehaviour
+public class SpinningDrone : MonoBehaviour
 {
-
-    public float speed;                //Floating point variable to store the player's movement speed.
+    public float xspeed;                //Floating point variable to store the player's movement speed.
+    public float yspeed;
     private Rigidbody2D rb2d;        //Store a reference to the Rigidbody2D component required to use 2D Physics.
 
     // Use this for initialization
@@ -19,11 +19,9 @@ public class DroneBehaviour : MonoBehaviour
     void FixedUpdate()
     {
         //Use the two store floats to create a new Vector2 variable movement.
-        Vector2 movement = new Vector2 (speed, 0);
+        Vector2 movement = new Vector2 (xspeed, yspeed);
 
         //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
         rb2d.AddForce (movement);
     }
-    
-    
 }

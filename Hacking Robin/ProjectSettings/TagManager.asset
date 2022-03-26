@@ -56,6 +56,6 @@ TagManager:
   - name: Coin
     uniqueID: 2729055119
     locked: 0
-  - name: Drone
+  - name: Enemy
     uniqueID: 645197885
     locked: 0
