@@ -14,12 +14,15 @@ public class InfiniteScrolling : MonoBehaviour
     public int maxNumberOfActiveBackgrounds;
     public int maxNumberOfActiveObstacles;
     public Text counterText;
+    public int coffeeDuration;
+    public int beerDuration;
     private int coinCount;
     private float backgroundWidth;
     private float maxX;
     private int backgroundNumber = 0;
     private Queue<GameObject> backgrounds = new Queue<GameObject>();
     private Queue<GameObject> obstacles = new Queue<GameObject>();
+    private CharacterMovement characterMovementScript;
 
 
     // Start is called before the first frame update
@@ -27,6 +30,7 @@ public class InfiniteScrolling : MonoBehaviour
     {
         backgroundWidth = 29.56f; //TODO: change this value when we change the sprite (hardcoded)
         coinCount = 0;
+        characterMovementScript = player.GetComponent<CharacterMovement>();
     }
 
     // Update is called once per frame
@@ -68,18 +72,27 @@ public class InfiniteScrolling : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
 
-
         switch (col.gameObject.tag)
         {
             case "Enemy":
                 col.gameObject.SetActive(false);
+                characterMovementScript.loseHP();
                 break;
             case "Obstacle":
                 col.gameObject.SetActive(false);
+                characterMovementScript.loseHP();
                 break;
             case "Coin":
                 col.gameObject.SetActive(false);
                 setCounterText();
+                break;
+            case "Coffee":
+                col.gameObject.SetActive(false);
+                improveAttackSpeed();
+                break;
+            case "Beer":
+                col.gameObject.SetActive(false);
+                shield();
                 break;
             default:
                 break;
@@ -90,6 +103,31 @@ public class InfiniteScrolling : MonoBehaviour
     {
         coinCount++;
         counterText.text = "Coins: " + coinCount.ToString();
+    }
+
+    void improveAttackSpeed()
+    {
+        float previousShotDelay = characterMovementScript.shotDelay;
+        characterMovementScript.shotDelay = previousShotDelay / 5;
+        StartCoroutine(coffeeEffect(previousShotDelay));
+    }
+
+    IEnumerator coffeeEffect(float previousShotDelay)
+    {
+        yield return new WaitForSeconds(coffeeDuration);
+        characterMovementScript.shotDelay = previousShotDelay;
+    }
+
+    void shield()
+    {
+        characterMovementScript.shieldOn = true;
+        StartCoroutine(shieldEffect());
+    }
+
+    IEnumerator shieldEffect()
+    {
+        yield return new WaitForSeconds(beerDuration);
+        characterMovementScript.shieldOn = false;
     }
 
 }

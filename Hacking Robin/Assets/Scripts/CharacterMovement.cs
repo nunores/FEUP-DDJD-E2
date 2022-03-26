@@ -9,15 +9,19 @@ public class CharacterMovement : MonoBehaviour
     public GameObject player;
     public GameObject playerShot;
     public int bulletSpeed;
-    public int shotDelay;
+    public float shotDelay;
+    public bool shieldOn = false;
+    public List<GameObject> hearts;
     private Queue<GameObject> currentShots = new Queue<GameObject>();
     private Rigidbody2D rb2d;
+    private int lives;
     private bool canShoot = true;
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         Physics2D.IgnoreLayerCollision(6, 7, true);
+        lives = hearts.Count;
     }
 
     // Update is called once per frame
@@ -28,11 +32,13 @@ public class CharacterMovement : MonoBehaviour
         {
             movement = new Vector2(0, verticalSpeed);
         }
-
         rb2d.AddForce(movement);
-
         Vector2 newVelocity = rb2d.velocity;
         newVelocity.x = horizontalSpeed;
+        foreach (GameObject heart in hearts)
+        {
+            heart.GetComponent<Rigidbody2D>().velocity = new Vector2(rb2d.velocity.x, 0);
+        }
         rb2d.velocity = newVelocity;
     }
 
@@ -64,6 +70,23 @@ public class CharacterMovement : MonoBehaviour
         GameObject shot = (GameObject)Instantiate(playerShot);
         shot.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, 0);
         return shot;
+    }
+
+    public void loseHP()
+    {
+        if (!shieldOn)
+        {
+            lives--;
+            if (lives <= 0)
+            {
+                print("Dead");
+            }
+            else
+            {
+                Destroy(hearts[hearts.Count - 1]);
+                hearts.RemoveAt(hearts.Count - 1);
+            }
+        }
     }
 
     IEnumerator reload()

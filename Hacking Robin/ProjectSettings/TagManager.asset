@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Obstacle
   - Coin
+  - Coffee
+  - Enemy
+  - Beer
   layers:
   - Default
   - TransparentFX
@@ -55,6 +58,12 @@ TagManager:
   - name: Coin
     uniqueID: 2729055119
     locked: 0
+  - name: PowerUp
+    uniqueID: 1198873567
+    locked: 0
   - name: Drone
     uniqueID: 645197885
+    locked: 0
+  - name: Heart
+    uniqueID: 3500715531
     locked: 0
