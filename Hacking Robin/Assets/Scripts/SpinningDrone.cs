@@ -19,9 +19,23 @@ public class SpinningDrone : MonoBehaviour
     void FixedUpdate()
     {
         //Use the two store floats to create a new Vector2 variable movement.
-        Vector2 movement = new Vector2 (xspeed, yspeed);
+        //Vector2 movement = new Vector2 (xspeed, yspeed);
 
         //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
-        rb2d.AddForce (movement);
+        //rb2d.AddForce (movement);
+        rb2d.velocity = new Vector2(xspeed * Time.fixedDeltaTime, yspeed * Time.fixedDeltaTime);
     }
+    
+    void OnTriggerEnter2D(Collider2D col)
+    {
+         switch (col.gameObject.tag)
+        {
+            case "Background":
+                yspeed = -yspeed;
+                break;
+            default:
+                break;
+        }
+    }
+    
 }
