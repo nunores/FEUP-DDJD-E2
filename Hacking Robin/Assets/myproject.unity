@@ -972,6 +972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xspeed: -300
   yspeed: 600
+  degreesPerSec: 200
 --- !u!61 &1370026212
 BoxCollider2D:
   m_ObjectHideFlags: 0
