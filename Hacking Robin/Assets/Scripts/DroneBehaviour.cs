@@ -5,38 +5,24 @@ using UnityEngine;
 public class DroneBehaviour : MonoBehaviour
 {
 
-    public float verticalSpeed;
-    public float horizontalSpeed;
-    public GameObject player;
-    public GameObject playerShot;
-    public float bulletSpeed;
-    public float shotDelay;
-    private Queue<GameObject> currentShots = new Queue<GameObject>();
-    private Rigidbody2D rb2d;
-    private bool canShoot = true;
-    // Start is called before the first frame update
+    public float speed;                //Floating point variable to store the player's movement speed.
+    private Rigidbody2D rb2d;        //Store a reference to the Rigidbody2D component required to use 2D Physics.
+
+    // Use this for initialization
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
-        Physics2D.IgnoreLayerCollision(6, 7, true);
+        //Get and store a reference to the Rigidbody2D component so that we can access it.
+        rb2d = GetComponent<Rigidbody2D> ();
     }
-    
-    // Update is called once per frame
+
+    //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
     void FixedUpdate()
     {
-        Vector2 movement = new Vector2(horizontalSpeed, verticalSpeed);
+        //Use the two store floats to create a new Vector2 variable movement.
+        Vector2 movement = new Vector2 (speed, 0);
 
-        rb2d.AddForce(movement);
-
-        Vector2 newVelocity = rb2d.velocity;
-        newVelocity.x = horizontalSpeed;
-        newVelocity.y = 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
+        rb2d.AddForce (movement);
     }
     
     
