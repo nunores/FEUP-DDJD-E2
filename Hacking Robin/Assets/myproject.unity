@@ -961,6 +961,7 @@ MonoBehaviour:
   player: {fileID: 1405205161}
   drone: {fileID: 1294861151}
   timeStopped: 6
+  yspeed: 4
   droneShot: {fileID: 80536137}
   bulletSpeed: 3
   reloadTime: 1

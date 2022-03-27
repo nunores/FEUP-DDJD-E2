@@ -11,6 +11,7 @@ public class ShootingDrone : MonoBehaviour
     public GameObject player;
     public GameObject drone;
     public int timeStopped; // time in seconds it stops in air before leaving
+    public float yspeed; // only activates when stopped
     private bool stop = false;
     private bool stoppedOnce = false; // true if has stopped once
     private float original_xspeed; // copy of original xspeed
@@ -41,6 +42,9 @@ public class ShootingDrone : MonoBehaviour
 	}
 	if(stop == true){
 		StartCoroutine(stopWait());
+		Vector2 newVelocityY = rb2d.velocity;
+		newVelocityY.y = yspeed;
+		rb2d.velocity = newVelocityY;
 		if(canShoot == true){
 			Debug.Log("Shot!");
 			canShoot = false;
@@ -77,12 +81,28 @@ public class ShootingDrone : MonoBehaviour
         return shot;
     }
     
+    void OnTriggerEnter2D(Collider2D col)
+    {
+         switch (col.gameObject.tag)
+        {
+            case "Background":
+                yspeed = -yspeed;
+                break;
+            default:
+                break;
+        }
+    }
+    
 
     IEnumerator stopWait()
     {
 		yield return new WaitForSeconds(timeStopped);
 		xspeed = original_xspeed;
+		yspeed = 0;
 		stop = false;
+		Vector2 newVelocityY = rb2d.velocity;
+		newVelocityY.y = yspeed;
+		rb2d.velocity = newVelocityY;
     }
     
     
