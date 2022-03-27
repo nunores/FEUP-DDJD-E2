@@ -933,6 +933,7 @@ MonoBehaviour:
   xspeed: -5
   player: {fileID: 1405205161}
   drone: {fileID: 1294861151}
+  timeStopped: 6
 --- !u!50 &1294861154
 Rigidbody2D:
   serializedVersion: 4
@@ -1546,8 +1547,8 @@ MonoBehaviour:
   possibleObstacles:
   - {fileID: 57822031}
   - {fileID: 1734542844}
-  - {fileID: 2034845874}
-  - {fileID: 1370026208}
+  - {fileID: 1294861151}
+  - {fileID: 1294861151}
   - {fileID: 1294861151}
   player: {fileID: 1405205161}
   currentRoom: {fileID: 218863316}
