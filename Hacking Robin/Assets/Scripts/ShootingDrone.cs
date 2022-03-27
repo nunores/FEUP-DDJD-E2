@@ -22,10 +22,12 @@ public class ShootingDrone : MonoBehaviour
     {
 
 
-	if (drone.transform.position.x - player.transform.position.x < 0.1 && drone.transform.position.x - player.transform.position.x > 0){
+	if (drone.transform.position.x - player.transform.position.x < 20 && drone.transform.position.x - player.transform.position.x > 0){
 		xspeed = 10;
 		Debug.Log("STOP");
 	}
+	//if(drone.transform.position.x - player.transform.position.x > 0)
+	//	Debug.Log(drone.transform.position.x - player.transform.position.x);
 	
 		Vector2 newVelocity = rb2d.velocity;
 		newVelocity.x = xspeed;
