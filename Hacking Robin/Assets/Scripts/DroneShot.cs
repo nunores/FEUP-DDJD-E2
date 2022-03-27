@@ -32,7 +32,7 @@ public class DroneShot : MonoBehaviour
                 Destroy(droneShot);
                 break;
             case "Obstacle":
-                Destroy(droneShot);
+                //Destroy(droneShot);
                 break;
             default:
                 break;

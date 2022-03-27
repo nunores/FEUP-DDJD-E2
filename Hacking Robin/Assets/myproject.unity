@@ -1424,7 +1424,7 @@ GameObject:
   - component: {fileID: 1405205167}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1577,8 +1577,8 @@ MonoBehaviour:
   possibleObstacles:
   - {fileID: 57822031}
   - {fileID: 1734542844}
-  - {fileID: 1294861151}
-  - {fileID: 1294861151}
+  - {fileID: 2034845874}
+  - {fileID: 1370026208}
   - {fileID: 1294861151}
   player: {fileID: 1405205161}
   currentRoom: {fileID: 218863316}
