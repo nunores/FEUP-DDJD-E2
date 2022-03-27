@@ -364,7 +364,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 218863316}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b5295ebdb2e2f2f40ac5913c649fe1cb, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -390,7 +390,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 218863316}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b5295ebdb2e2f2f40ac5913c649fe1cb, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1455,7 +1455,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405205161}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1470,7 +1470,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1405205161}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b5295ebdb2e2f2f40ac5913c649fe1cb, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1503,11 +1503,11 @@ MonoBehaviour:
   - {fileID: 218863316}
   - {fileID: 1762812975}
   possibleObstacles:
-  - {fileID: 57822031}
-  - {fileID: 1734542844}
-  - {fileID: 2034845874}
   - {fileID: 900721908}
+  - {fileID: 763429585}
+  - {fileID: 57822031}
   - {fileID: 2132875929}
+  - {fileID: 2034845874}
   player: {fileID: 1405205161}
   currentRoom: {fileID: 218863316}
   currentObstacle: {fileID: 57822031}
@@ -1516,6 +1516,7 @@ MonoBehaviour:
   counterText: {fileID: 725434393}
   coffeeDuration: 5
   beerDuration: 20
+  coffeeReduceFactor: 5
 --- !u!1 &1532622940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1774,7 +1775,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1762812975}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b5295ebdb2e2f2f40ac5913c649fe1cb, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1800,7 +1801,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1762812975}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b5295ebdb2e2f2f40ac5913c649fe1cb, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

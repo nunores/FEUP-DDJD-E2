@@ -16,6 +16,7 @@ public class InfiniteScrolling : MonoBehaviour
     public Text counterText;
     public int coffeeDuration;
     public int beerDuration;
+    public int coffeeReduceFactor;
     private int coinCount;
     private float backgroundWidth;
     private float maxX;
@@ -23,6 +24,8 @@ public class InfiniteScrolling : MonoBehaviour
     private Queue<GameObject> backgrounds = new Queue<GameObject>();
     private Queue<GameObject> obstacles = new Queue<GameObject>();
     private CharacterMovement characterMovementScript;
+    private int numberActiveCoffee;
+    private int numberActiveBeer;
 
 
     // Start is called before the first frame update
@@ -30,13 +33,15 @@ public class InfiniteScrolling : MonoBehaviour
     {
         backgroundWidth = 29.56f; //TODO: change this value when we change the sprite (hardcoded)
         coinCount = 0;
+        numberActiveCoffee = 0;
+        numberActiveBeer = 0;
         characterMovementScript = player.GetComponent<CharacterMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player.transform.position.x > currentRoom.transform.position.x)
+        if (player.transform.position.x > currentRoom.transform.position.x - 5)
         {
             currentRoom = generateBackground();
             backgrounds.Enqueue(currentRoom);
@@ -107,19 +112,25 @@ public class InfiniteScrolling : MonoBehaviour
 
     void improveAttackSpeed()
     {
-        float previousShotDelay = characterMovementScript.shotDelay;
-        characterMovementScript.shotDelay = previousShotDelay / 5;
+        numberActiveCoffee++;
+        float previousShotDelay = 1; //TODO: change if shotDelay is changed in charactermovement script
+        characterMovementScript.shotDelay = previousShotDelay / coffeeReduceFactor;
         StartCoroutine(coffeeEffect(previousShotDelay));
     }
 
     IEnumerator coffeeEffect(float previousShotDelay)
     {
         yield return new WaitForSeconds(coffeeDuration);
-        characterMovementScript.shotDelay = previousShotDelay;
+        numberActiveCoffee--;
+        if (numberActiveCoffee == 0)
+        {
+            characterMovementScript.shotDelay = previousShotDelay;
+        }
     }
 
     void shield()
     {
+        numberActiveBeer++;
         characterMovementScript.shieldOn = true;
         StartCoroutine(shieldEffect());
     }
@@ -127,7 +138,11 @@ public class InfiniteScrolling : MonoBehaviour
     IEnumerator shieldEffect()
     {
         yield return new WaitForSeconds(beerDuration);
-        characterMovementScript.shieldOn = false;
+        numberActiveBeer--;
+        if (numberActiveBeer == 0)
+        {
+            characterMovementScript.shieldOn = false;
+        }
     }
 
 }
