@@ -9,6 +9,7 @@ TagManager:
   - Coffee
   - Enemy
   - Beer
+  - Background
   layers:
   - Default
   - TransparentFX
@@ -57,6 +58,9 @@ TagManager:
     locked: 0
   - name: Coin
     uniqueID: 2729055119
+    locked: 0
+  - name: Enemy
+    uniqueID: 4203651129
     locked: 0
   - name: PowerUp
     uniqueID: 1198873567

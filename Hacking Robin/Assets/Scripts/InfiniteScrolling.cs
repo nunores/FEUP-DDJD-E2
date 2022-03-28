@@ -36,12 +36,13 @@ public class InfiniteScrolling : MonoBehaviour
         numberActiveCoffee = 0;
         numberActiveBeer = 0;
         characterMovementScript = player.GetComponent<CharacterMovement>();
+        backgrounds.Enqueue(currentRoom);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player.transform.position.x > currentRoom.transform.position.x - 5)
+        if (player.transform.position.x > currentRoom.transform.position.x - 9)
         {
             currentRoom = generateBackground();
             backgrounds.Enqueue(currentRoom);
@@ -64,13 +65,15 @@ public class InfiniteScrolling : MonoBehaviour
 
     private GameObject generateBackground(){
         GameObject room = (GameObject)Instantiate(possibleBackgrounds[Random.Range(0, possibleBackgrounds.Length)]);
+        room.SetActive(true);
         room.transform.position = new Vector3(backgroundWidth * (backgroundNumber + 1), 0, 0);
         return room;
     }
 
     private GameObject generateObstacle(){
         GameObject obstacle = (GameObject)Instantiate(possibleObstacles[Random.Range(0, possibleObstacles.Length)]);
-        obstacle.transform.position = new Vector3((backgroundWidth * (backgroundNumber + 1)) - (backgroundWidth / 2), Random.Range(-4.6f, 4.6f), 0); //TODO: hardcoded
+        obstacle.SetActive(true);
+        obstacle.transform.position = new Vector3((backgroundWidth * (backgroundNumber + 1)) - (backgroundWidth / 2), Random.Range(-4f, 4f), 0); //TODO: hardcoded
         return obstacle;
     }
 

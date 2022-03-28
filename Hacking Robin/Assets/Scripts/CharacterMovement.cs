@@ -12,6 +12,7 @@ public class CharacterMovement : MonoBehaviour
     public float shotDelay;
     public bool shieldOn = false;
     public List<GameObject> hearts;
+    public GameObject floorCeilling;
     private Queue<GameObject> currentShots = new Queue<GameObject>();
     private Rigidbody2D rb2d;
     private int lives;
@@ -35,6 +36,7 @@ public class CharacterMovement : MonoBehaviour
         rb2d.AddForce(movement);
         Vector2 newVelocity = rb2d.velocity;
         newVelocity.x = horizontalSpeed;
+        floorCeilling.GetComponent<Rigidbody2D>().velocity = new Vector2(rb2d.velocity.x, 0);
         foreach (GameObject heart in hearts)
         {
             heart.GetComponent<Rigidbody2D>().velocity = new Vector2(rb2d.velocity.x, 0);
@@ -68,6 +70,7 @@ public class CharacterMovement : MonoBehaviour
     private GameObject playerShooting()
     {
         GameObject shot = (GameObject)Instantiate(playerShot);
+        shot.SetActive(true);
         shot.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, 0);
         return shot;
     }
