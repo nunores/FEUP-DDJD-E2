@@ -94,6 +94,11 @@ public class InfiniteScrolling : MonoBehaviour
                 col.gameObject.SetActive(false);
                 characterMovementScript.loseHP();
                 break;
+            case "ShotEnemy":
+                col.gameObject.SetActive(false);
+                characterMovementScript.loseHP();
+                break;                
+
             case "Obstacle":
                 col.gameObject.SetActive(false);
                 characterMovementScript.loseHP();
