@@ -4599,8 +4599,8 @@ MonoBehaviour:
   - {fileID: 1762812975}
   possibleObstacles:
   - {fileID: 849650509}
-  - {fileID: 1530179248}
-  - {fileID: 1530179248}
+  - {fileID: 104431948}
+  - {fileID: 57822031}
   - {fileID: 1530179248}
   possibleGoodThings:
   - {fileID: 2132875929}
