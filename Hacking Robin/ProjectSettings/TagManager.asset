@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Beer
   - Background
+  - ShotEnemy
   layers:
   - Default
   - TransparentFX

@@ -781,7 +781,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4599,8 +4599,9 @@ MonoBehaviour:
   - {fileID: 1762812975}
   possibleObstacles:
   - {fileID: 849650509}
-  - {fileID: 57822031}
-  - {fileID: 104431948}
+  - {fileID: 1530179248}
+  - {fileID: 1530179248}
+  - {fileID: 1530179248}
   possibleGoodThings:
   - {fileID: 2132875929}
   - {fileID: 900721908}
@@ -4785,7 +4786,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5079,7 +5080,7 @@ GameObject:
   - component: {fileID: 1549937157}
   m_Layer: 0
   m_Name: DroneShot
-  m_TagString: Untagged
+  m_TagString: ShotEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

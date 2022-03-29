@@ -29,7 +29,7 @@ public class DroneShot : MonoBehaviour
          switch (col.gameObject.tag)
         {
             case "Player":
-                Destroy(droneShot);
+                //Destroy(droneShot);
                 break;
             case "Obstacle":
                 //Destroy(droneShot);
