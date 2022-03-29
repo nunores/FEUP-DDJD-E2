@@ -8,6 +8,7 @@ public class InfiniteScrolling : MonoBehaviour
 
     public GameObject[] possibleBackgrounds;
     public GameObject[] possibleObstacles;
+    public GameObject[] possibleGoodThings;
     public GameObject player;
     public GameObject currentRoom;
     public GameObject currentObstacle;
@@ -36,7 +37,6 @@ public class InfiniteScrolling : MonoBehaviour
         numberActiveCoffee = 0;
         numberActiveBeer = 0;
         characterMovementScript = player.GetComponent<CharacterMovement>();
-        backgrounds.Enqueue(currentRoom);
     }
 
     // Update is called once per frame
@@ -54,7 +54,7 @@ public class InfiniteScrolling : MonoBehaviour
         }
         if (player.transform.position.x > currentObstacle.transform.position.x)
         {
-            currentObstacle = generateObstacle();
+            currentObstacle = generateGeneration();
             obstacles.Enqueue(currentObstacle);
             if (obstacles.Count > maxNumberOfActiveObstacles)
             {
@@ -70,11 +70,19 @@ public class InfiniteScrolling : MonoBehaviour
         return room;
     }
 
-    private GameObject generateObstacle(){
-        GameObject obstacle = (GameObject)Instantiate(possibleObstacles[Random.Range(0, possibleObstacles.Length)]);
-        obstacle.SetActive(true);
-        obstacle.transform.position = new Vector3((backgroundWidth * (backgroundNumber + 1)) - (backgroundWidth / 2), Random.Range(-4f, 4f), 0); //TODO: hardcoded
-        return obstacle;
+    private GameObject generateGeneration(){
+        GameObject generation;
+        if (Random.Range(0, 100) < 30)
+        {
+            generation = (GameObject)Instantiate(possibleGoodThings[Random.Range(0, possibleGoodThings.Length)]);
+        }
+        else
+        {
+            generation = (GameObject)Instantiate(possibleObstacles[Random.Range(0, possibleObstacles.Length)]);
+        }
+        generation.SetActive(true);
+        generation.transform.position = new Vector3((backgroundWidth * (backgroundNumber + 1)) - (backgroundWidth / 2), Random.Range(-4f, 4f), 0); //TODO: hardcoded
+        return generation;
     }
 
     void OnTriggerEnter2D(Collider2D col)

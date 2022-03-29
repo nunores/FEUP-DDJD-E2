@@ -83,6 +83,7 @@ public class CharacterMovement : MonoBehaviour
             if (lives <= 0)
             {
                 print("Dead");
+                Time.timeScale = 0;
             }
             else
             {
