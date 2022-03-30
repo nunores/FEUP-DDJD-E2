@@ -51,6 +51,9 @@ TagManager:
   - name: Background
     uniqueID: 4196421493
     locked: 0
+  - name: Pillar
+    uniqueID: 577502577
+    locked: 0
   - name: Player
     uniqueID: 2753908101
     locked: 0
