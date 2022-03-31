@@ -477,5 +477,5 @@ MonoBehaviour:
   yspeed: 4
   droneShot: {fileID: 0}
   bulletSpeed: 3
-  maxReloadTime: 0
-  minReloadTime: 0
+  maxReloadTime: 3
+  minReloadTime: 0.5
