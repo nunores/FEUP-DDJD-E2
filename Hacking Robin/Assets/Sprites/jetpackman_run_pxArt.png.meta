@@ -1,0 +1,477 @@
+fileFormatVersion: 2
+guid: 36bcffa0dd4ee8840bfbe6289f7ed3dd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8598519088473861156
+    second: jetpackman_run_pxArt_1
+  - first:
+      213: 6182481332908368613
+    second: jetpackman_run_pxArt_2
+  - first:
+      213: -4248702495238866246
+    second: jetpackman_run_pxArt_3
+  - first:
+      213: -5904266955720747686
+    second: jetpackman_run_pxArt_4
+  - first:
+      213: 10728682399805441
+    second: jetpackman_run_pxArt_5
+  - first:
+      213: -4705330440056491359
+    second: jetpackman_run_pxArt_6
+  - first:
+      213: 8330444365691664564
+    second: jetpackman_run_pxArt_7
+  - first:
+      213: -7871970177505071759
+    second: jetpackman_run_pxArt_8
+  - first:
+      213: -1946698799885246387
+    second: jetpackman_run_pxArt_9
+  - first:
+      213: 170213151816848051
+    second: jetpackman_run_pxArt_10
+  - first:
+      213: -1426096695439293615
+    second: jetpackman_run_pxArt_11
+  - first:
+      213: -1714767919638569256
+    second: jetpackman_run_pxArt_12
+  - first:
+      213: -838336759796436504
+    second: jetpackman_run_pxArt_13
+  - first:
+      213: 2604226860648738666
+    second: jetpackman_run_pxArt_14
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: jetpackman_run_pxArt_0
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1387
+        width: 439
+        height: 530
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cfb2c8e779e36590800000000000000
+      internalID: -7682039838148476989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jetpackman_run_pxArt_1
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 1375
+        width: 439
+        height: 530
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd39919227ceba880800000000000000
+      internalID: -8598519088473861156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jetpackman_run_pxArt_2
+      rect:
+        serializedVersion: 2
+        x: 2004
+        y: 1372
+        width: 439
+        height: 530
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e2ac7e14069cc550800000000000000
+      internalID: 6182481332908368613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jetpackman_run_pxArt_3
+      rect:
+        serializedVersion: 2
+        x: 2893
+        y: 1363
+        width: 439
+        height: 544
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abab8f657939905c0800000000000000
+      internalID: -4248702495238866246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jetpackman_run_pxArt_4
+      rect:
+        serializedVersion: 2
+        x: 3777
+        y: 1362
+        width: 439
+        height: 548
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5510356c74df0ea0800000000000000
+      internalID: -5904266955720747686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jetpackman_run_pxArt_5
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 729
+        width: 462
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10039570ead162000800000000000000
+      internalID: 10728682399805441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jetpackman_run_pxArt_6
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 742
+        width: 492
+        height: 543
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2b99905ee43beb0800000000000000
+      internalID: -4705330440056491359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jetpackman_run_pxArt_7
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 750
+        width: 523
+        height: 526
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b8b436930fab9370800000000000000
+      internalID: 8330444365691664564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jetpackman_run_pxArt_8
+      rect:
+        serializedVersion: 2
+        x: 2843
+        y: 748
+        width: 505
+        height: 532
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17d675fb4d421c290800000000000000
+      internalID: -7871970177505071759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jetpackman_run_pxArt_9
+      rect:
+        serializedVersion: 2
+        x: 3739
+        y: 735
+        width: 481
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d40292c61cfebf4e0800000000000000
+      internalID: -1946698799885246387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jetpackman_run_pxArt_10
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 77
+        width: 465
+        height: 544
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b29422b5f7bc5200800000000000000
+      internalID: 170213151816848051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jetpackman_run_pxArt_11
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 78
+        width: 440
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1538bfc7c9c753ce0800000000000000
+      internalID: -1426096695439293615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jetpackman_run_pxArt_12
+      rect:
+        serializedVersion: 2
+        x: 2022
+        y: 77
+        width: 429
+        height: 554
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8de15bd89abe338e0800000000000000
+      internalID: -1714767919638569256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jetpackman_run_pxArt_13
+      rect:
+        serializedVersion: 2
+        x: 2895
+        y: 84
+        width: 424
+        height: 562
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e17e2e9821ad54f0800000000000000
+      internalID: -838336759796436504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jetpackman_run_pxArt_14
+      rect:
+        serializedVersion: 2
+        x: 3769
+        y: 103
+        width: 427
+        height: 534
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6faf7f2882142420800000000000000
+      internalID: 2604226860648738666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
