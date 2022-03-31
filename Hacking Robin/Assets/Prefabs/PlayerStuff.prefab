@@ -257,6 +257,7 @@ MonoBehaviour:
   verticalSpeed: 50
   horizontalSpeed: 10
   xAccelaration: 0.005
+  maxXSpeed: 22
   player: {fileID: 4477454525884842565}
   playerShot: {fileID: 4477454525510419717}
   bulletSpeed: 3

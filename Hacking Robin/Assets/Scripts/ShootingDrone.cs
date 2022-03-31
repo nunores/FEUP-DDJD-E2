@@ -67,7 +67,7 @@ public class ShootingDrone : MonoBehaviour
             	if(stop == false && stoppedOnce == true){
             		newVelocity.x = -original_xspeed;
             		}
-                Vector2 shotVelocity = new Vector2(-newVelocity.x * bulletSpeed, 0); //TODO: change this speed, when the player gets faster de bulletspeed doesnt change
+                Vector2 shotVelocity = new Vector2(-newVelocity.x, 0); //TODO: change this speed, when the player gets faster de bulletspeed doesnt change
                 if(shot != null){
                 	shot.GetComponent<Rigidbody2D>().velocity = shotVelocity;
                 }

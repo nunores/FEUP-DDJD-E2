@@ -7,6 +7,7 @@ public class CharacterMovement : MonoBehaviour
     public int verticalSpeed;
     public float horizontalSpeed;
     public float xAccelaration; // add to horizontalSpeed each fixed update
+    public float maxXSpeed; // To limit the max speed
     public GameObject player;
     public GameObject playerShot;
     public int bulletSpeed;
@@ -36,15 +37,16 @@ public class CharacterMovement : MonoBehaviour
         }
         rb2d.AddForce(movement);
         Vector2 newVelocity = rb2d.velocity;
-        horizontalSpeed += xAccelaration;
+        if(horizontalSpeed<maxXSpeed)
+            horizontalSpeed += xAccelaration;
         newVelocity.x = horizontalSpeed;
-        
+        rb2d.velocity = newVelocity;
         floorCeilling.GetComponent<Rigidbody2D>().velocity = new Vector2(rb2d.velocity.x, 0);
         foreach (GameObject heart in hearts)
         {
             heart.GetComponent<Rigidbody2D>().velocity = new Vector2(rb2d.velocity.x, 0);
         }
-        rb2d.velocity = newVelocity;
+        
     }
 
     void Update()
