@@ -1040,7 +1040,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 16, y: 8.16}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4680,10 +4680,10 @@ MonoBehaviour:
   - {fileID: 218863316}
   - {fileID: 1762812975}
   possibleObstacles:
-  - {fileID: 57822031}
-  - {fileID: 849650509}
-  - {fileID: 104431948}
   - {fileID: 1530179248}
+  - {fileID: 849650509}
+  - {fileID: 57822031}
+  - {fileID: 104431948}
   possibleGoodThings:
   - {fileID: 2132875929}
   - {fileID: 900721908}
@@ -4849,12 +4849,11 @@ MonoBehaviour:
   playerSpeed: 10
   player: {fileID: 1405205161}
   drone: {fileID: 1530179248}
-  timeStopped: 7
+  timeStopped: 6
   yspeed: 4
   droneShot: {fileID: 1549937156}
   bulletSpeed: 3
-  maxReloadTime: 3
-  minReloadTime: 0.5
+  reloadTime: 1
 --- !u!50 &1530179251
 Rigidbody2D:
   serializedVersion: 4
@@ -5689,7 +5688,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 16, y: 8.16}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
