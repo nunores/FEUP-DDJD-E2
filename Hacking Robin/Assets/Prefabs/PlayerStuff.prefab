@@ -330,6 +330,7 @@ MonoBehaviour:
   coffeeDuration: 5
   beerDuration: 20
   coffeeReduceFactor: 5
+  coin1UPCount: 30
 --- !u!1 &6191722376917363387
 GameObject:
   m_ObjectHideFlags: 0
