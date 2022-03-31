@@ -91,6 +91,10 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    public float getHorizontalSpeed(){
+        return horizontalSpeed;
+    }
+
     IEnumerator reload()
     {
         yield return new WaitForSeconds(shotDelay);
