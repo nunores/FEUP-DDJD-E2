@@ -151,6 +151,7 @@ public class InfiniteScrolling : MonoBehaviour
     {
         numberActiveBeer++;
         characterMovementScript.shieldOn = true;
+        characterMovementScript.activateShield();
         StartCoroutine(shieldEffect());
     }
 
@@ -160,6 +161,7 @@ public class InfiniteScrolling : MonoBehaviour
         numberActiveBeer--;
         if (numberActiveBeer == 0)
         {
+            characterMovementScript.deactivateShield();
             characterMovementScript.shieldOn = false;
         }
     }
