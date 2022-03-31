@@ -18,7 +18,8 @@ public class ShootingDrone : MonoBehaviour
     //Shooting
     public GameObject droneShot;
     public float bulletSpeed;
-    public float reloadTime; // reload time in seconds
+    public float maxReloadTime; // reload time in seconds
+    public float minReloadTime; // reload time in seconds
     private Queue<GameObject> currentShots = new Queue<GameObject>();
     private bool canShoot = true;
 
@@ -111,6 +112,7 @@ public class ShootingDrone : MonoBehaviour
     
     IEnumerator reloadShot()
     {
+        float reloadTime = Random.Range(minReloadTime,maxReloadTime);
 		yield return new WaitForSeconds(reloadTime);
 		canShoot = true;
 
