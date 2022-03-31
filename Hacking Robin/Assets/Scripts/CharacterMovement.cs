@@ -54,8 +54,6 @@ public class CharacterMovement : MonoBehaviour
         }
 
         Vector2 newVelocity = rb2d.velocity;
-        newVelocity.x = horizontalSpeed;
-        rb2d.velocity = newVelocity;
 
         foreach(GameObject shot in currentShots)
         {
