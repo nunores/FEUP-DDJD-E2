@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D rb2d;
     private int lives;
     private bool canShoot = true;
+    private bool playerIsDead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,23 +53,31 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Return) && canShoot)
-        {
-            canShoot = false;
-            currentShots.Enqueue(playerShooting());
-            StartCoroutine(reload());
-        }
-
-        Vector2 newVelocity = rb2d.velocity;
-
-        foreach(GameObject shot in currentShots)
-        {
-            if (shot != null)
+        if(playerIsDead){
+            //Time.timeScale = 0;
+            // TO DO Menu restart
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        } else{
+            if (Input.GetKey(KeyCode.Return) && canShoot)
             {
-                Vector2 shotVelocity = new Vector2(newVelocity.x * bulletSpeed, 0); //TODO: change this speed, when the player gets faster de bulletspeed doesnt change
-                shot.GetComponent<Rigidbody2D>().velocity = shotVelocity;
+                canShoot = false;
+                currentShots.Enqueue(playerShooting());
+                StartCoroutine(reload());
+            }
+
+            Vector2 newVelocity = rb2d.velocity;
+
+            foreach(GameObject shot in currentShots)
+            {
+                if (shot != null)
+                {
+                    Vector2 shotVelocity = new Vector2(newVelocity.x * bulletSpeed, 0); //TODO: change this speed, when the player gets faster de bulletspeed doesnt change
+                    shot.GetComponent<Rigidbody2D>().velocity = shotVelocity;
+                }
             }
         }
+
+
     }
 
     private GameObject playerShooting()
@@ -86,7 +96,7 @@ public class CharacterMovement : MonoBehaviour
             if (lives <= 0)
             {
                 print("Dead");
-                Time.timeScale = 0;
+                playerIsDead = true;
             }
             else
             {
@@ -98,13 +108,17 @@ public class CharacterMovement : MonoBehaviour
 
     public void gainHP()
     {
-        lives++;
-        GameObject newHeart = (GameObject)Instantiate(hearts[0]);
-        float xPos = hearts[hearts.Count-1].transform.position.x;
-        float yPos = hearts[hearts.Count-1].transform.position.y;
-        float zPos = hearts[hearts.Count-1].transform.position.z;
-        newHeart.transform.position = new Vector3(xPos-1, yPos, zPos);
-        hearts.Add(newHeart);
+        if(lives <= 5){
+            lives++;
+            GameObject newHeart = (GameObject)Instantiate(hearts[0]);
+            float xPos = hearts[hearts.Count-1].transform.position.x;
+            float yPos = hearts[hearts.Count-1].transform.position.y;
+            float zPos = hearts[hearts.Count-1].transform.position.z;
+            newHeart.transform.position = new Vector3(xPos-1, yPos, zPos);
+            hearts.Add(newHeart);
+        }
+        Debug.Log("Max Lives Limit Reached");
+
         
     }
 
