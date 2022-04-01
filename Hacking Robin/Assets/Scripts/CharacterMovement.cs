@@ -21,6 +21,8 @@ public class CharacterMovement : MonoBehaviour
     private int lives;
     private bool canShoot = true;
     private bool playerIsDead = false;
+    public GameObject gameOver;
+    public GameObject restartR;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +58,12 @@ public class CharacterMovement : MonoBehaviour
         if(playerIsDead){
             //Time.timeScale = 0;
             // TO DO Menu restart
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+            gameOver.SetActive(true);
+            restartR.SetActive(true);
+            if(Input.GetKey(KeyCode.R)){
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         } else{
             if (Input.GetKey(KeyCode.Return) && canShoot)
             {
@@ -98,11 +105,10 @@ public class CharacterMovement : MonoBehaviour
                 print("Dead");
                 playerIsDead = true;
             }
-            else
-            {
-                Destroy(hearts[hearts.Count - 1]);
-                hearts.RemoveAt(hearts.Count - 1);
-            }
+
+            Destroy(hearts[hearts.Count - 1]);
+            hearts.RemoveAt(hearts.Count - 1);
+
         }
     }
 
@@ -116,8 +122,8 @@ public class CharacterMovement : MonoBehaviour
             float zPos = hearts[hearts.Count-1].transform.position.z;
             newHeart.transform.position = new Vector3(xPos-1, yPos, zPos);
             hearts.Add(newHeart);
-        }
-        Debug.Log("Max Lives Limit Reached");
+        } else 
+            Debug.Log("Max Lives Limit Reached");
 
         
     }
