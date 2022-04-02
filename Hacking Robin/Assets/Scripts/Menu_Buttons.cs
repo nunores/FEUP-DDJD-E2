@@ -6,6 +6,7 @@ public class Menu_Buttons : MonoBehaviour
 {
     public GameObject MenuPanel;
     public GameObject DifficultySelectPanel;
+    public GameObject DiedPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +24,21 @@ public class Menu_Buttons : MonoBehaviour
         {
             MenuPanel.SetActive(false);
             DifficultySelectPanel.SetActive(true);
+            DiedPanel.SetActive(false);
         }
 
     public void ShowMenuPanel()
         {
             MenuPanel.SetActive(true);
             DifficultySelectPanel.SetActive(false);
+            DiedPanel.SetActive(false);
         }
+
+    public void ShowDeadPanel()
+    {
+        MenuPanel.SetActive(false);
+        DifficultySelectPanel.SetActive(false);
+        DiedPanel.SetActive(true);
+    }
 
 }

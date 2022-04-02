@@ -109,7 +109,7 @@ public class CharacterMovement : MonoBehaviour
             {
                 print("Dead");
                 playerIsDead = true;
-                menu_ButtonsScript.ShowMenuPanel();
+                menu_ButtonsScript.ShowDeadPanel();
             }
 
             Destroy(hearts[hearts.Count - 1]);
