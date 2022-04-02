@@ -10,7 +10,6 @@ public class InfiniteScrolling : MonoBehaviour
     public GameObject[] possibleBackgrounds;
     public GameObject[] possibleObstacles;
     public GameObject[] possibleGoodThings;
-    public GameObject pillar;
     public GameObject player;
     public GameObject currentRoom;
     public GameObject currentObstacle;
@@ -35,7 +34,7 @@ public class InfiniteScrolling : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        backgroundWidth = 28.8f; //TODO: change this value when we change the sprite (hardcoded)
+        backgroundWidth = 26f; //TODO: change this value when we change the sprite (hardcoded)
         coinCount = 0;
         numberActiveCoffee = 0;
         numberActiveBeer = 0;
@@ -68,10 +67,8 @@ public class InfiniteScrolling : MonoBehaviour
 
     private GameObject generateBackground(){
         GameObject room = (GameObject)Instantiate(possibleBackgrounds[Random.Range(0, possibleBackgrounds.Length)]);
-        GameObject newPillar = (GameObject)Instantiate(pillar);
         room.SetActive(true);
-        room.transform.position = new Vector3(backgroundWidth * (backgroundNumber + 1), 0, 0);
-        pillar.transform.position = new Vector3((backgroundWidth * (backgroundNumber + 1)) - (backgroundWidth / 2), 0, 0);
+        room.transform.position = new Vector3(backgroundWidth * (backgroundNumber + 1), currentRoom.transform.position.y, 0);
         return room;
     }
 

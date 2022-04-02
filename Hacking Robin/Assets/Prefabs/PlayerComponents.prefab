@@ -108,12 +108,12 @@ SpriteRenderer:
   m_SortingLayerID: -1541059195
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7682039838148476989, guid: 36bcffa0dd4ee8840bfbe6289f7ed3dd, type: 3}
+  m_Sprite: {fileID: 6641898880041639133, guid: ede4a87112cbaf541acb191ea450419b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.3912983, y: 5.2999997}
+  m_Size: {x: 4.051198, y: 5.09}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -186,8 +186,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.3912983, y: 5.2999997}
-    newSize: {x: 4.3912983, y: 5.2999997}
+    oldSize: {x: 4.051198, y: 5.09}
+    newSize: {x: 4.051198, y: 5.09}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -221,7 +221,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  pillar: {fileID: 0}
   player: {fileID: 2818307371322565339}
   currentRoom: {fileID: 0}
   currentObstacle: {fileID: 0}
