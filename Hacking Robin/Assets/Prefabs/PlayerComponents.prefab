@@ -231,7 +231,7 @@ MonoBehaviour:
   coffeeDuration: 5
   beerDuration: 20
   coffeeReduceFactor: 5
-  coin1UPCount: 10
+  coin1UPCount: 50
 --- !u!95 &2818307371322565314
 Animator:
   serializedVersion: 3
