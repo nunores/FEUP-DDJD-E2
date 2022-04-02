@@ -152,8 +152,8 @@ MonoBehaviour:
   yspeed: 4
   droneShot: {fileID: 0}
   bulletSpeed: 3
-  maxReloadTime: 0
-  minReloadTime: 0
+  maxReloadTime: 3
+  minReloadTime: 0.5
 --- !u!1 &5483861338963791426
 GameObject:
   m_ObjectHideFlags: 0
