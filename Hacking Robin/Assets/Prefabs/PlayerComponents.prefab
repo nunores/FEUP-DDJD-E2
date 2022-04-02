@@ -5214,4 +5214,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71c90699f8f9b9438d9ced8ff164766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yToDisappear: -5
+  yToDisappear: -4.5
