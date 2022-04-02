@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class InfiniteScrolling : MonoBehaviour
 {
 
@@ -20,6 +21,7 @@ public class InfiniteScrolling : MonoBehaviour
     public int beerDuration;
     public int coffeeReduceFactor;
     private int coinCount;
+    public int coin1UPCount;
     private float backgroundWidth;
     private float maxX;
     private int backgroundNumber = 0;
@@ -126,6 +128,10 @@ public class InfiniteScrolling : MonoBehaviour
     void setCounterText()
     {
         coinCount++;
+        if(coinCount>=coin1UPCount){
+            characterMovementScript.gainHP();
+            coinCount -= coin1UPCount;
+        }
         counterText.text = "Coins: " + coinCount.ToString();
     }
 

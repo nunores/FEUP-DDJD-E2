@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
 {
     public int verticalSpeed;
     public float horizontalSpeed;
+    public float xAccelaration; // add to horizontalSpeed each fixed update
+    public float maxXSpeed; // To limit the max speed
     public GameObject player;
     public GameObject playerShot;
     public int bulletSpeed;
@@ -18,6 +21,9 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D rb2d;
     private int lives;
     private bool canShoot = true;
+    private bool playerIsDead = false;
+    public GameObject gameOver;
+    public GameObject restartR;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,35 +42,47 @@ public class CharacterMovement : MonoBehaviour
         }
         rb2d.AddForce(movement);
         Vector2 newVelocity = rb2d.velocity;
+        if(horizontalSpeed<maxXSpeed)
+            horizontalSpeed += xAccelaration;
         newVelocity.x = horizontalSpeed;
+        rb2d.velocity = newVelocity;
         floorCeilling.GetComponent<Rigidbody2D>().velocity = new Vector2(rb2d.velocity.x, 0);
         shield.GetComponent<Rigidbody2D>().velocity = new Vector2(rb2d.velocity.x, 0);
         foreach (GameObject heart in hearts)
         {
             heart.GetComponent<Rigidbody2D>().velocity = new Vector2(rb2d.velocity.x, 0);
         }
-        rb2d.velocity = newVelocity;
+        
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Return) && canShoot)
-        {
-            canShoot = false;
-            currentShots.Enqueue(playerShooting());
-            StartCoroutine(reload());
-        }
-
-        Vector2 newVelocity = rb2d.velocity;
-        newVelocity.x = horizontalSpeed;
-        rb2d.velocity = newVelocity;
-
-        foreach(GameObject shot in currentShots)
-        {
-            if (shot != null)
+        if(playerIsDead){
+            //Time.timeScale = 0;
+            // TO DO Menu restart
+            rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+            gameOver.SetActive(true);
+            restartR.SetActive(true);
+            if(Input.GetKey(KeyCode.R)){
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        } else{
+            if (Input.GetKey(KeyCode.Return) && canShoot)
             {
-                Vector2 shotVelocity = new Vector2(newVelocity.x * bulletSpeed, 0); //TODO: change this speed, when the player gets faster de bulletspeed doesnt change
-                shot.GetComponent<Rigidbody2D>().velocity = shotVelocity;
+                canShoot = false;
+                currentShots.Enqueue(playerShooting());
+                StartCoroutine(reload());
+            }
+
+            Vector2 newVelocity = rb2d.velocity;
+
+            foreach(GameObject shot in currentShots)
+            {
+                if (shot != null)
+                {
+                    Vector2 shotVelocity = new Vector2(newVelocity.x * bulletSpeed, 0); //TODO: change this speed, when the player gets faster de bulletspeed doesnt change
+                    shot.GetComponent<Rigidbody2D>().velocity = shotVelocity;
+                }
             }
         }
 
@@ -87,14 +105,33 @@ public class CharacterMovement : MonoBehaviour
             if (lives <= 0)
             {
                 print("Dead");
-                Time.timeScale = 0;
+                playerIsDead = true;
             }
-            else
-            {
-                Destroy(hearts[hearts.Count - 1]);
-                hearts.RemoveAt(hearts.Count - 1);
-            }
+
+            Destroy(hearts[hearts.Count - 1]);
+            hearts.RemoveAt(hearts.Count - 1);
+
         }
+    }
+
+    public void gainHP()
+    {
+        if(lives <= 5){
+            lives++;
+            GameObject newHeart = (GameObject)Instantiate(hearts[0]);
+            float xPos = hearts[hearts.Count-1].transform.position.x;
+            float yPos = hearts[hearts.Count-1].transform.position.y;
+            float zPos = hearts[hearts.Count-1].transform.position.z;
+            newHeart.transform.position = new Vector3(xPos-1, yPos, zPos);
+            hearts.Add(newHeart);
+        } else 
+            Debug.Log("Max Lives Limit Reached");
+
+        
+    }
+
+    public float getHorizontalSpeed(){
+        return horizontalSpeed;
     }
 
     IEnumerator reload()

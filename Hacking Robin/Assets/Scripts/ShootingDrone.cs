@@ -9,6 +9,7 @@ public class ShootingDrone : MonoBehaviour
     public float xspeed;
     public float playerSpeed; // Match player speed for drone to appear stopped
     public GameObject player;
+    private CharacterMovement characterMovementScript;
     public GameObject drone;
     public int timeStopped; // time in seconds it stops in air before leaving
     public float yspeed; // only activates when stopped
@@ -18,7 +19,8 @@ public class ShootingDrone : MonoBehaviour
     //Shooting
     public GameObject droneShot;
     public float bulletSpeed;
-    public float reloadTime; // reload time in seconds
+    public float maxReloadTime; // reload time in seconds
+    public float minReloadTime; // reload time in seconds
     private Queue<GameObject> currentShots = new Queue<GameObject>();
     private bool canShoot = true;
 
@@ -28,7 +30,7 @@ public class ShootingDrone : MonoBehaviour
         //Get and store a reference to the Rigidbody2D component so that we can access it.
         rb2d = GetComponent<Rigidbody2D> ();
         original_xspeed = xspeed;
-        
+        characterMovementScript = player.GetComponent<CharacterMovement>();
     }
 
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
@@ -37,7 +39,6 @@ public class ShootingDrone : MonoBehaviour
 
 
 	if (drone.transform.position.x - player.transform.position.x < 20 && drone.transform.position.x - player.transform.position.x > 0 && stop == false && stoppedOnce == false){
-		xspeed = playerSpeed;
 		stop = true;
 		stoppedOnce = true;
 		
@@ -55,7 +56,8 @@ public class ShootingDrone : MonoBehaviour
 	}
 	
 	Vector2 newVelocity = rb2d.velocity;
-	newVelocity.x = xspeed;
+    if(stop == true) newVelocity.x = characterMovementScript.getHorizontalSpeed();
+    else newVelocity.x = -original_xspeed;
 	rb2d.velocity = newVelocity;
 		
         foreach(GameObject shot in currentShots)
@@ -65,7 +67,7 @@ public class ShootingDrone : MonoBehaviour
             	if(stop == false && stoppedOnce == true){
             		newVelocity.x = -original_xspeed;
             		}
-                Vector2 shotVelocity = new Vector2(-newVelocity.x * bulletSpeed, 0); //TODO: change this speed, when the player gets faster de bulletspeed doesnt change
+                Vector2 shotVelocity = new Vector2(-newVelocity.x, 0); //TODO: change this speed, when the player gets faster de bulletspeed doesnt change
                 if(shot != null){
                 	shot.GetComponent<Rigidbody2D>().velocity = shotVelocity;
                 }
@@ -111,6 +113,7 @@ public class ShootingDrone : MonoBehaviour
     
     IEnumerator reloadShot()
     {
+        float reloadTime = Random.Range(minReloadTime,maxReloadTime);
 		yield return new WaitForSeconds(reloadTime);
 		canShoot = true;
 
