@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Menu_Buttons : MonoBehaviour
 {
@@ -8,10 +9,15 @@ public class Menu_Buttons : MonoBehaviour
     public GameObject DifficultySelectPanel;
     public GameObject DiedPanel;
     // Start is called before the first frame update
+    private static bool showInitial = true; 
     void Start()
     {
-        //MenuPanel.SetActive(true);
-        //DifficultySelectPanel.SetActive(false);
+        if(showInitial)
+            MenuPanel.SetActive(true);
+        else
+            MenuPanel.SetActive(false);
+        DifficultySelectPanel.SetActive(false);
+        DiedPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,6 +45,15 @@ public class Menu_Buttons : MonoBehaviour
         MenuPanel.SetActive(false);
         DifficultySelectPanel.SetActive(false);
         DiedPanel.SetActive(true);
+    }
+        
+    public void startGame()
+    {
+        MenuPanel.SetActive(false);
+        DifficultySelectPanel.SetActive(false);
+        DiedPanel.SetActive(false);
+        showInitial = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }
