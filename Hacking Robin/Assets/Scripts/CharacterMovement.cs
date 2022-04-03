@@ -21,7 +21,6 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D rb2d;
     private int lives;
     private bool canShoot = true;
-    private bool playerIsDead = false;
     public GameObject gameOver;
     public GameObject restartR;
     public GameObject uiManager;
@@ -60,32 +59,24 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        if(playerIsDead){
-            //Time.timeScale = 0;
-            // TO DO Menu restart
-            rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
-            //gameOver.SetActive(true);
-            //restartR.SetActive(true);
-            //if(Input.GetKey(KeyCode.R)){
-            //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            //}
-        } else{
-            if (Input.GetKey(KeyCode.Return) && canShoot)
-            {
-                canShoot = false;
-                currentShots.Enqueue(playerShooting());
-                StartCoroutine(reload());
-            }
+        if (Input.GetKey(KeyCode.Return) && canShoot)
+        {
+            canShoot = false;
+            currentShots.Enqueue(playerShooting());
+            StartCoroutine(reload());
+        }
+        if (Input.GetKey(KeyCode.Escape)){
+            menu_ButtonsScript.ShowMenuPanel();
+        }
 
-            Vector2 newVelocity = rb2d.velocity;
+        Vector2 newVelocity = rb2d.velocity;
 
-            foreach(GameObject shot in currentShots)
+        foreach(GameObject shot in currentShots)
+        {
+            if (shot != null)
             {
-                if (shot != null)
-                {
-                    Vector2 shotVelocity = new Vector2(newVelocity.x * bulletSpeed, 0); //TODO: change this speed, when the player gets faster de bulletspeed doesnt change
-                    shot.GetComponent<Rigidbody2D>().velocity = shotVelocity;
-                }
+                Vector2 shotVelocity = new Vector2(newVelocity.x * bulletSpeed, 0); //TODO: change this speed, when the player gets faster de bulletspeed doesnt change
+                shot.GetComponent<Rigidbody2D>().velocity = shotVelocity;
             }
         }
 
@@ -108,7 +99,6 @@ public class CharacterMovement : MonoBehaviour
             if (lives <= 0)
             {
                 print("Dead");
-                playerIsDead = true;
                 menu_ButtonsScript.ShowDeadPanel();
             }
 

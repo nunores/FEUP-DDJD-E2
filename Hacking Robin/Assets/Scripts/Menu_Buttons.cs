@@ -12,10 +12,14 @@ public class Menu_Buttons : MonoBehaviour
     private static bool showInitial = true; 
     void Start()
     {
-        if(showInitial)
+        
+        if(showInitial){
+            Time.timeScale = 0;
             MenuPanel.SetActive(true);
-        else
+        } else{
             MenuPanel.SetActive(false);
+            Time.timeScale = 1;
+        }
         DifficultySelectPanel.SetActive(false);
         DiedPanel.SetActive(false);
     }
@@ -27,21 +31,24 @@ public class Menu_Buttons : MonoBehaviour
     }
 
     public void ShowDifficultyPanel()
-        {
-            MenuPanel.SetActive(false);
-            DifficultySelectPanel.SetActive(true);
-            DiedPanel.SetActive(false);
-        }
+    {
+        Time.timeScale = 0;
+        MenuPanel.SetActive(false);
+        DifficultySelectPanel.SetActive(true);
+        DiedPanel.SetActive(false);
+    }
 
     public void ShowMenuPanel()
-        {
-            MenuPanel.SetActive(true);
-            DifficultySelectPanel.SetActive(false);
-            DiedPanel.SetActive(false);
-        }
+    {
+        Time.timeScale = 0;
+        MenuPanel.SetActive(true);
+        DifficultySelectPanel.SetActive(false);
+        DiedPanel.SetActive(false);
+    }
 
     public void ShowDeadPanel()
     {
+        Time.timeScale = 0;
         MenuPanel.SetActive(false);
         DifficultySelectPanel.SetActive(false);
         DiedPanel.SetActive(true);
@@ -49,6 +56,7 @@ public class Menu_Buttons : MonoBehaviour
         
     public void startGame()
     {
+        Time.timeScale = 1;
         MenuPanel.SetActive(false);
         DifficultySelectPanel.SetActive(false);
         DiedPanel.SetActive(false);

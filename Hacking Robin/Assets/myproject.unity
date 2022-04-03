@@ -803,6 +803,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 395365157396866587, guid: ed82357a0fd563b3eb997445aeeed72d, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1405205161}
+    - target: {fileID: 395365157396866587, guid: ed82357a0fd563b3eb997445aeeed72d, type: 3}
+      propertyPath: InfiniteScroolling
+      value: 
+      objectReference: {fileID: 1405205161}
     - target: {fileID: 2310190435684861043, guid: ed82357a0fd563b3eb997445aeeed72d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
