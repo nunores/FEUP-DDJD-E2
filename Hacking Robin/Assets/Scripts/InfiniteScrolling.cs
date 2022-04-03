@@ -187,7 +187,7 @@ public class InfiniteScrolling : MonoBehaviour
             characterMovementScript.deactivateShield();
             characterMovementScript.shieldOn = false;
         }
-    }
+    }   
 
     public IEnumerator BlinkPlayer(int numBlinks, float seconds)
     {
