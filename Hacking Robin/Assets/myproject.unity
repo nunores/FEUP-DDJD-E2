@@ -148,6 +148,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8155958122108876218, guid: 3362498239507ce46a239d1075d3570f, type: 3}
   m_PrefabInstance: {fileID: 8155958122306379990}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &526524327 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 293455361409291129, guid: c21cf7011ea3a0139bfa43590bcfa26a, type: 3}
+  m_PrefabInstance: {fileID: 293455361555927639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &571575430 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8155958121737038928, guid: 3362498239507ce46a239d1075d3570f, type: 3}
@@ -304,11 +309,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2151806414231702162, guid: ed82357a0fd563b3eb997445aeeed72d, type: 3}
   m_PrefabInstance: {fileID: 5972363206872012790}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1530179248 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5483861338587349951, guid: f7726c7fb153e5d929e17f36ec356d84, type: 3}
-  m_PrefabInstance: {fileID: 5483861339741613327}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1532622940
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +411,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7775008876285733119, guid: f7726c7fb153e5d929e17f36ec356d84, type: 3}
   m_PrefabInstance: {fileID: 5483861339741613327}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1621369283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5483861338963791426, guid: f7726c7fb153e5d929e17f36ec356d84, type: 3}
+  m_PrefabInstance: {fileID: 5483861339741613327}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1668386710 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 293455362280277537, guid: c21cf7011ea3a0139bfa43590bcfa26a, type: 3}
+  m_PrefabInstance: {fileID: 293455361555927639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1716739348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 793931016532835577, guid: ed82357a0fd563b3eb997445aeeed72d, type: 3}
@@ -420,6 +430,11 @@ GameObject:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2403977149835344888, guid: e9949aa9b72f7654e96dab0b49fe9428, type: 3}
   m_PrefabInstance: {fileID: 2403977150522007511}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2122144774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 293455361421752031, guid: c21cf7011ea3a0139bfa43590bcfa26a, type: 3}
+  m_PrefabInstance: {fileID: 293455361555927639}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2132875929 stripped
 GameObject:
@@ -649,7 +664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2818307371322565341, guid: e8ac1e9457901834c9aa352cc5e5ec26, type: 3}
       propertyPath: possibleGoodThings.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2818307371322565341, guid: e8ac1e9457901834c9aa352cc5e5ec26, type: 3}
       propertyPath: possibleBackgrounds.Array.size
@@ -658,19 +673,19 @@ PrefabInstance:
     - target: {fileID: 2818307371322565341, guid: e8ac1e9457901834c9aa352cc5e5ec26, type: 3}
       propertyPath: possibleObstacles.Array.data[0]
       value: 
-      objectReference: {fileID: 1530179248}
+      objectReference: {fileID: 104431948}
     - target: {fileID: 2818307371322565341, guid: e8ac1e9457901834c9aa352cc5e5ec26, type: 3}
       propertyPath: possibleObstacles.Array.data[1]
       value: 
-      objectReference: {fileID: 57822031}
+      objectReference: {fileID: 1621369283}
     - target: {fileID: 2818307371322565341, guid: e8ac1e9457901834c9aa352cc5e5ec26, type: 3}
       propertyPath: possibleObstacles.Array.data[2]
       value: 
-      objectReference: {fileID: 104431948}
+      objectReference: {fileID: 1621369283}
     - target: {fileID: 2818307371322565341, guid: e8ac1e9457901834c9aa352cc5e5ec26, type: 3}
       propertyPath: possibleObstacles.Array.data[3]
       value: 
-      objectReference: {fileID: 104431948}
+      objectReference: {fileID: 1621369283}
     - target: {fileID: 2818307371322565341, guid: e8ac1e9457901834c9aa352cc5e5ec26, type: 3}
       propertyPath: possibleGoodThings.Array.data[0]
       value: 
@@ -682,15 +697,15 @@ PrefabInstance:
     - target: {fileID: 2818307371322565341, guid: e8ac1e9457901834c9aa352cc5e5ec26, type: 3}
       propertyPath: possibleGoodThings.Array.data[2]
       value: 
-      objectReference: {fileID: 900721908}
+      objectReference: {fileID: 2122144774}
     - target: {fileID: 2818307371322565341, guid: e8ac1e9457901834c9aa352cc5e5ec26, type: 3}
       propertyPath: possibleGoodThings.Array.data[3]
       value: 
-      objectReference: {fileID: 900721908}
+      objectReference: {fileID: 1668386710}
     - target: {fileID: 2818307371322565341, guid: e8ac1e9457901834c9aa352cc5e5ec26, type: 3}
       propertyPath: possibleGoodThings.Array.data[4]
       value: 
-      objectReference: {fileID: 900721908}
+      objectReference: {fileID: 526524327}
     - target: {fileID: 2818307371322565341, guid: e8ac1e9457901834c9aa352cc5e5ec26, type: 3}
       propertyPath: possibleBackgrounds.Array.data[0]
       value: 

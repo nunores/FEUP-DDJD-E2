@@ -52,6 +52,15 @@ public class CharacterMovement : MonoBehaviour
         {
             heart.GetComponent<Rigidbody2D>().velocity = new Vector2(rb2d.velocity.x, 0);
         }
+        print(player.transform.position.y);
+        if (player.transform.position.y < -3.5f)
+        {
+            GetComponent<Animator>().SetBool("isGrounded", true);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("isGrounded", false);
+        }
         
     }
 
