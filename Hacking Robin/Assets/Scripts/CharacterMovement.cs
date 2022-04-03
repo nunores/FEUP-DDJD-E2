@@ -59,15 +59,16 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Return) && canShoot)
+        if (Input.GetKey(KeyCode.Escape)){
+            menu_ButtonsScript.ShowPausePanel();
+        }
+        else if (Input.GetKey(KeyCode.Return) && canShoot)
         {
             canShoot = false;
             currentShots.Enqueue(playerShooting());
             StartCoroutine(reload());
         }
-        if (Input.GetKey(KeyCode.Escape)){
-            menu_ButtonsScript.ShowMenuPanel();
-        }
+
 
         Vector2 newVelocity = rb2d.velocity;
 
