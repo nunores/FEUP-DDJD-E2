@@ -129,7 +129,7 @@ public class InfiniteScrolling : MonoBehaviour
             characterMovementScript.gainHP();
             coinCount -= coin1UPCount;
         }
-        counterText.text = "Coins: " + coinCount.ToString();
+        counterText.text = " " + coinCount.ToString() + " ";
     }
 
     void improveAttackSpeed()
