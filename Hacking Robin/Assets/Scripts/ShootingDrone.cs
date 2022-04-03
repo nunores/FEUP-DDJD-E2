@@ -38,7 +38,7 @@ public class ShootingDrone : MonoBehaviour
     {
 
 
-	if (drone.transform.position.x - player.transform.position.x < 20 && drone.transform.position.x - player.transform.position.x > 0 && stop == false && stoppedOnce == false){
+	if (drone.transform.position.x - player.transform.position.x < 14 && drone.transform.position.x - player.transform.position.x > 0 && stop == false && stoppedOnce == false){
 		stop = true;
 		stoppedOnce = true;
 		
