@@ -8,7 +8,15 @@ public class ParticleScript : MonoBehaviour
     ParticleSystem m_System;
     ParticleSystem.Particle[] m_Particles;
 
+    private CharacterMovement characterMovementScript;
+
     public float yToDisappear;
+    public GameObject player;
+
+    void Start()
+    {
+        characterMovementScript = player.GetComponent<CharacterMovement>();
+    }
     void InitializeIfNeeded()
     {
         if (m_System == null)
@@ -32,6 +40,7 @@ public class ParticleScript : MonoBehaviour
                 m_Particles[i].remainingLifetime = -1.0f;
                 // TODO: Add to score 
             }
+            m_Particles[i].velocity = new Vector3(characterMovementScript.getHorizontalSpeed(), m_Particles[i].velocity.y, 0);
         }
 
         // Apply the particle changes to the Particle System
