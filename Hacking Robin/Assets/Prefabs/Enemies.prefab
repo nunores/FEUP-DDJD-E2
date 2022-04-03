@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5483861338587349947}
   - component: {fileID: 5483861338587349948}
   - component: {fileID: 5483861338587349949}
+  - component: {fileID: 2899783145157919061}
   m_Layer: 0
   m_Name: ShootingDrone
   m_TagString: Enemy
@@ -28,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5483861338587349951}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.7600002, y: -2.3400002, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 3}
+  m_LocalPosition: {x: 3.58, y: 2.59, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 3}
   m_Children: []
   m_Father: {fileID: 5483861339355594181}
   m_RootOrder: 2
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -91316167
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2d728ff08787c6640bbe4984c7ff018b, type: 3}
+  m_Sprite: {fileID: 5479251442258587350, guid: 6f7fe4f58f1077e41b9ef6b47a7f20de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,9 +101,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.02}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.01, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.83, y: 0.6}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -154,6 +155,25 @@ MonoBehaviour:
   bulletSpeed: 3
   maxReloadTime: 3
   minReloadTime: 0.5
+--- !u!95 &2899783145157919061
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5483861338587349951}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ca7786f7cad90d6418e108dcdae6a802, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5483861338963791426
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +187,7 @@ GameObject:
   - component: {fileID: 5483861338963791454}
   - component: {fileID: 5483861338963791455}
   - component: {fileID: 5483861338963791424}
+  - component: {fileID: 7581695919794329392}
   m_Layer: 0
   m_Name: BasicDrone
   m_TagString: Enemy
@@ -228,7 +249,7 @@ SpriteRenderer:
   m_SortingLayerID: -91316167
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 282fa6659f7eabb4f88d7cd347ae7723, type: 3}
+  m_Sprite: {fileID: -1819298813575606250, guid: a339a2062a462954ca2e6c4c6fb5ecad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -256,7 +277,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.42, y: 0.42}
+    oldSize: {x: 0.36, y: 0.18}
     newSize: {x: 0.42, y: 0.42}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -299,6 +320,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -10
+--- !u!95 &7581695919794329392
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5483861338963791426}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3dbad113f03a1dd49ad2230e75a5da04, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5483861339355594182
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +387,7 @@ GameObject:
   - component: {fileID: 5483861339844799583}
   - component: {fileID: 5483861339844799552}
   - component: {fileID: 5483861339844799553}
+  - component: {fileID: 9120562118024137914}
   m_Layer: 0
   m_Name: SpinningDrone
   m_TagString: Enemy
@@ -408,7 +449,7 @@ SpriteRenderer:
   m_SortingLayerID: -91316167
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1508ab85aab80754fb0213cd79267961, type: 3}
+  m_Sprite: {fileID: 4723107735738678597, guid: 69380fa99a448eb42b6165accd9e1f66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -416,7 +457,7 @@ SpriteRenderer:
   m_Size: {x: 0.54, y: 0.52}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &5483861339844799583
@@ -451,7 +492,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.54, y: 0.52}
+    oldSize: {x: 0.4, y: 0.28}
     newSize: {x: 0.54, y: 0.52}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -481,6 +522,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &9120562118024137914
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5483861339844799555}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a5e47b89a99668243a71b27ef1f4c4b4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6821261579872020812
 GameObject:
   m_ObjectHideFlags: 0
