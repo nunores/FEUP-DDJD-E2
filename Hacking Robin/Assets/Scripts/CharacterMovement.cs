@@ -19,7 +19,7 @@ public class CharacterMovement : MonoBehaviour
     public GameObject shield;
     private Queue<GameObject> currentShots = new Queue<GameObject>();
     private Rigidbody2D rb2d;
-    private int lives;
+    public int lives;
     private bool canShoot = true;
     public GameObject gameOver;
     public GameObject restartR;

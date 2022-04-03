@@ -4987,6 +4987,7 @@ MonoBehaviour:
   - {fileID: 0}
   floorCeilling: {fileID: 0}
   shield: {fileID: 0}
+  lives: 3
   gameOver: {fileID: 0}
   restartR: {fileID: 0}
   uiManager: {fileID: 0}
