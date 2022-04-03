@@ -24,12 +24,15 @@ public class CharacterMovement : MonoBehaviour
     private bool playerIsDead = false;
     public GameObject gameOver;
     public GameObject restartR;
+    public GameObject uiManager;
+    private Menu_Buttons menu_ButtonsScript;
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         Physics2D.IgnoreLayerCollision(6, 7, true);
         lives = hearts.Count;
+        menu_ButtonsScript = uiManager.GetComponent<Menu_Buttons>();
     }
 
     // Update is called once per frame
@@ -61,11 +64,11 @@ public class CharacterMovement : MonoBehaviour
             //Time.timeScale = 0;
             // TO DO Menu restart
             rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
-            gameOver.SetActive(true);
-            restartR.SetActive(true);
-            if(Input.GetKey(KeyCode.R)){
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
+            //gameOver.SetActive(true);
+            //restartR.SetActive(true);
+            //if(Input.GetKey(KeyCode.R)){
+            //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //}
         } else{
             if (Input.GetKey(KeyCode.Return) && canShoot)
             {
@@ -106,6 +109,7 @@ public class CharacterMovement : MonoBehaviour
             {
                 print("Dead");
                 playerIsDead = true;
+                menu_ButtonsScript.ShowDeadPanel();
             }
 
             Destroy(hearts[hearts.Count - 1]);
