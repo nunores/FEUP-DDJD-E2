@@ -21,8 +21,6 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D rb2d;
     public int lives;
     private bool canShoot = true;
-    public GameObject gameOver;
-    public GameObject restartR;
     public GameObject uiManager;
     private Menu_Buttons menu_ButtonsScript;
     // Start is called before the first frame update
@@ -54,7 +52,6 @@ public class CharacterMovement : MonoBehaviour
         {
             heart.GetComponent<Rigidbody2D>().velocity = new Vector2(rb2d.velocity.x, 0);
         }
-        print(player.transform.position.y);
         if (player.transform.position.y < -3.5f)
         {
             GetComponent<Animator>().SetBool("isGrounded", true);
