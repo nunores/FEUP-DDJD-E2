@@ -103,17 +103,24 @@ public class InfiniteScrolling : MonoBehaviour
                 col.gameObject.SetActive(false);
                 characterMovementScript.loseHP();
                 StartCoroutine(cameraShakeScript.Shake(15f, 30f));
+                if (!characterMovementScript.shieldOn)
+                    StartCoroutine(BlinkPlayer(5, 0.1f));
+
                 break;
             case "ShotEnemy":
                 col.gameObject.SetActive(false);
                 characterMovementScript.loseHP();
                 StartCoroutine(cameraShakeScript.Shake(15f, 30f));
+                if (!characterMovementScript.shieldOn)
+                    StartCoroutine(BlinkPlayer(5, 0.1f));
                 break;
 
             case "Obstacle":
                 col.gameObject.SetActive(false);
                 characterMovementScript.loseHP();
                 StartCoroutine(cameraShakeScript.Shake(15f, 30f));
+                if (!characterMovementScript.shieldOn)
+                    StartCoroutine(BlinkPlayer(5, 0.1f));
 
                 break;
             case "Coin":
@@ -180,6 +187,18 @@ public class InfiniteScrolling : MonoBehaviour
             characterMovementScript.deactivateShield();
             characterMovementScript.shieldOn = false;
         }
+    }
+
+    public IEnumerator BlinkPlayer(int numBlinks, float seconds)
+    {
+        SpriteRenderer renderer = player.GetComponent<SpriteRenderer>();
+
+        for (int i = 0; i < numBlinks * 2; i++)
+        {
+            renderer.enabled = !renderer.enabled;
+            yield return new WaitForSeconds(seconds);
+        }
+        renderer.enabled = true;
     }
 
 }
