@@ -30,7 +30,8 @@ public class InfiniteScrolling : MonoBehaviour
     private CharacterMovement characterMovementScript;
     private int numberActiveCoffee;
     private int numberActiveBeer;
-
+    public GameObject cameraShakeObject;
+    private CameraShake cameraShakeScript;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class InfiniteScrolling : MonoBehaviour
         numberActiveCoffee = 0;
         numberActiveBeer = 0;
         characterMovementScript = player.GetComponent<CharacterMovement>();
+        cameraShakeScript = cameraShakeObject.GetComponent<CameraShake>();
     }
 
     // Update is called once per frame
@@ -66,7 +68,8 @@ public class InfiniteScrolling : MonoBehaviour
         }
     }
 
-    private GameObject generateBackground(){
+    private GameObject generateBackground()
+    {
         GameObject room = (GameObject)Instantiate(possibleBackgrounds[Random.Range(0, possibleBackgrounds.Length)]);
         GameObject newPillar = (GameObject)Instantiate(pillar);
         room.SetActive(true);
@@ -75,7 +78,8 @@ public class InfiniteScrolling : MonoBehaviour
         return room;
     }
 
-    private GameObject generateGeneration(){
+    private GameObject generateGeneration()
+    {
         GameObject generation;
         if (Random.Range(0, 100) < 30)
         {
@@ -98,19 +102,24 @@ public class InfiniteScrolling : MonoBehaviour
             case "Enemy":
                 col.gameObject.SetActive(false);
                 characterMovementScript.loseHP();
+                StartCoroutine(cameraShakeScript.Shake(15f, 30f));
                 break;
             case "ShotEnemy":
                 col.gameObject.SetActive(false);
                 characterMovementScript.loseHP();
-                break;                
+                StartCoroutine(cameraShakeScript.Shake(15f, 30f));
+                break;
 
             case "Obstacle":
                 col.gameObject.SetActive(false);
                 characterMovementScript.loseHP();
+                StartCoroutine(cameraShakeScript.Shake(15f, 30f));
+
                 break;
             case "Coin":
                 col.gameObject.SetActive(false);
                 setCounterText();
+
                 break;
             case "Coffee":
                 col.gameObject.SetActive(false);
@@ -128,7 +137,8 @@ public class InfiniteScrolling : MonoBehaviour
     void setCounterText()
     {
         coinCount++;
-        if(coinCount>=coin1UPCount){
+        if (coinCount >= coin1UPCount)
+        {
             characterMovementScript.gainHP();
             coinCount -= coin1UPCount;
         }
