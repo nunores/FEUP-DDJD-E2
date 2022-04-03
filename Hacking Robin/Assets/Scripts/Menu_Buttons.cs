@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Menu_Buttons : MonoBehaviour
 {
     public GameObject MenuPanel;
-    public GameObject DifficultySelectPanel;
     public GameObject DiedPanel;
     public GameObject PausePanel;
     // Start is called before the first frame update
@@ -21,7 +20,6 @@ public class Menu_Buttons : MonoBehaviour
             MenuPanel.SetActive(false);
             Time.timeScale = 1;
         }
-        DifficultySelectPanel.SetActive(false);
         DiedPanel.SetActive(false);
         PausePanel.SetActive(false);
     }
@@ -32,20 +30,17 @@ public class Menu_Buttons : MonoBehaviour
         
     }
 
-    public void ShowDifficultyPanel()
+    public void QuitGame()
     {
         Time.timeScale = 0;
-        MenuPanel.SetActive(false);
-        DifficultySelectPanel.SetActive(true);
-        DiedPanel.SetActive(false);
-        PausePanel.SetActive(false);
+        Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 
     public void ShowMenuPanel()
     {
         Time.timeScale = 0;
         MenuPanel.SetActive(true);
-        DifficultySelectPanel.SetActive(false);
         DiedPanel.SetActive(false);
         PausePanel.SetActive(false);
     }
@@ -54,17 +49,15 @@ public class Menu_Buttons : MonoBehaviour
     {
         Time.timeScale = 0;
         MenuPanel.SetActive(false);
-        DifficultySelectPanel.SetActive(false);
         DiedPanel.SetActive(true);
         PausePanel.SetActive(false);
     }
 
     public void ShowPausePanel()
     {
-        if(MenuPanel.activeSelf==false && DifficultySelectPanel.activeSelf==false && DiedPanel.activeSelf==false){
+        if(MenuPanel.activeSelf==false && DiedPanel.activeSelf==false){
             Time.timeScale = 0;
             MenuPanel.SetActive(false);
-            DifficultySelectPanel.SetActive(false);
             DiedPanel.SetActive(false);
             PausePanel.SetActive(true);
         }
@@ -73,7 +66,6 @@ public class Menu_Buttons : MonoBehaviour
     public void resumeGame(){
         Time.timeScale = 1;
         MenuPanel.SetActive(false);
-        DifficultySelectPanel.SetActive(false);
         DiedPanel.SetActive(false);
         PausePanel.SetActive(false);
     }
@@ -82,7 +74,6 @@ public class Menu_Buttons : MonoBehaviour
     {
         Time.timeScale = 1;
         MenuPanel.SetActive(false);
-        DifficultySelectPanel.SetActive(false);
         DiedPanel.SetActive(false);
         PausePanel.SetActive(false);
         showInitial = false;
