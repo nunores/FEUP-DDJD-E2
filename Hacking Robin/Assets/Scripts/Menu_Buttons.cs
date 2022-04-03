@@ -61,11 +61,13 @@ public class Menu_Buttons : MonoBehaviour
 
     public void ShowPausePanel()
     {
-        Time.timeScale = 0;
-        MenuPanel.SetActive(false);
-        DifficultySelectPanel.SetActive(false);
-        DiedPanel.SetActive(false);
-        PausePanel.SetActive(true);
+        if(MenuPanel.activeSelf==false && DifficultySelectPanel.activeSelf==false && DiedPanel.activeSelf==false){
+            Time.timeScale = 0;
+            MenuPanel.SetActive(false);
+            DifficultySelectPanel.SetActive(false);
+            DiedPanel.SetActive(false);
+            PausePanel.SetActive(true);
+        }
     }
 
     public void resumeGame(){
