@@ -128,6 +128,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6821261579872020812, guid: f7726c7fb153e5d929e17f36ec356d84, type: 3}
   m_PrefabInstance: {fileID: 5483861339741613327}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &57822035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57822031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff2079d8351c0384783bbf6aec982491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -5
 --- !u!1 &88246799 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8155958122361006809, guid: 3362498239507ce46a239d1075d3570f, type: 3}
@@ -714,7 +727,7 @@ PrefabInstance:
     - target: {fileID: 2818307371322565341, guid: e8ac1e9457901834c9aa352cc5e5ec26, type: 3}
       propertyPath: possibleObstacles.Array.data[0]
       value: 
-      objectReference: {fileID: 104431948}
+      objectReference: {fileID: 57822031}
     - target: {fileID: 2818307371322565341, guid: e8ac1e9457901834c9aa352cc5e5ec26, type: 3}
       propertyPath: possibleObstacles.Array.data[1]
       value: 
@@ -722,7 +735,7 @@ PrefabInstance:
     - target: {fileID: 2818307371322565341, guid: e8ac1e9457901834c9aa352cc5e5ec26, type: 3}
       propertyPath: possibleObstacles.Array.data[2]
       value: 
-      objectReference: {fileID: 57822031}
+      objectReference: {fileID: 104431948}
     - target: {fileID: 2818307371322565341, guid: e8ac1e9457901834c9aa352cc5e5ec26, type: 3}
       propertyPath: possibleObstacles.Array.data[3]
       value: 
@@ -902,6 +915,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 321073937682626550, guid: f7726c7fb153e5d929e17f36ec356d84, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 321073937682626550, guid: f7726c7fb153e5d929e17f36ec356d84, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.98
+      objectReference: {fileID: 0}
     - target: {fileID: 5483861338587349949, guid: f7726c7fb153e5d929e17f36ec356d84, type: 3}
       propertyPath: player
       value: 
@@ -961,6 +982,18 @@ PrefabInstance:
     - target: {fileID: 5483861339355594182, guid: f7726c7fb153e5d929e17f36ec356d84, type: 3}
       propertyPath: m_Name
       value: Enemies
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821261579872020812, guid: f7726c7fb153e5d929e17f36ec356d84, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7525128060671946620, guid: f7726c7fb153e5d929e17f36ec356d84, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7525128060671946620, guid: f7726c7fb153e5d929e17f36ec356d84, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7726c7fb153e5d929e17f36ec356d84, type: 3}

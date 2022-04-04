@@ -33,7 +33,7 @@ public class PlayerShotScript : MonoBehaviour
                 Destroy(playerShot);
                 break;
             case "Obstacle":
-                col.gameObject.SetActive(false);
+                //col.gameObject.SetActive(false);
                 Destroy(playerShot);
                 break;
             default:
