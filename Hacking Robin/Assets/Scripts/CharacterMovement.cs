@@ -23,9 +23,11 @@ public class CharacterMovement : MonoBehaviour
     private bool canShoot = true;
     public GameObject uiManager;
     private Menu_Buttons menu_ButtonsScript;
+    private SoundManagerScript soundManagerScript;
     // Start is called before the first frame update
     void Start()
     {
+        soundManagerScript = player.GetComponent<SoundManagerScript>();
         rb2d = GetComponent<Rigidbody2D>();
         Physics2D.IgnoreLayerCollision(6, 7, true);
         lives = hearts.Count;
@@ -95,6 +97,7 @@ public class CharacterMovement : MonoBehaviour
         GameObject shot = (GameObject)Instantiate(playerShot);
         shot.SetActive(true);
         shot.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, 0);
+        soundManagerScript.playSound("playerGun");
         return shot;
     }
 
@@ -103,6 +106,7 @@ public class CharacterMovement : MonoBehaviour
         if (!shieldOn)
         {
             lives--;
+            soundManagerScript.playSound("gettingHit");
             if (lives <= 0)
             {
                 print("Dead");

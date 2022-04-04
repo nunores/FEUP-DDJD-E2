@@ -31,10 +31,12 @@ public class InfiniteScrolling : MonoBehaviour
     private int numberActiveBeer;
     public GameObject cameraShakeObject;
     private CameraShake cameraShakeScript;
+    private SoundManagerScript soundManagerScript;
 
     // Start is called before the first frame update
     void Start()
     {
+        soundManagerScript = player.GetComponent<SoundManagerScript>();
         backgroundWidth = 26f; //TODO: change this value when we change the sprite (hardcoded)
         coinCount = 0;
         numberActiveCoffee = 0;
@@ -122,15 +124,18 @@ public class InfiniteScrolling : MonoBehaviour
                 break;
             case "Coin":
                 col.gameObject.SetActive(false);
+                soundManagerScript.playSound("pickCoin");
                 setCounterText();
 
                 break;
             case "Coffee":
                 col.gameObject.SetActive(false);
+                soundManagerScript.playSound("pickPowerUp");
                 improveAttackSpeed();
                 break;
             case "Beer":
                 col.gameObject.SetActive(false);
+                soundManagerScript.playSound("pickPowerUp");
                 shield();
                 break;
             default:

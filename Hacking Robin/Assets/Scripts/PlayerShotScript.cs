@@ -6,11 +6,13 @@ public class PlayerShotScript : MonoBehaviour
 {
 
     public GameObject playerShot;
+    public GameObject player;
+    private SoundManagerScript soundManagerScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        soundManagerScript = player.GetComponent<SoundManagerScript>();
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class PlayerShotScript : MonoBehaviour
         {
             case "Enemy":
                 col.gameObject.SetActive(false);
+                soundManagerScript.playSound("destroyingEnemy");
                 Destroy(playerShot);
                 break;
             case "Obstacle":

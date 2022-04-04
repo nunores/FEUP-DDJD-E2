@@ -23,10 +23,12 @@ public class ShootingDrone : MonoBehaviour
     public float minReloadTime; // reload time in seconds
     private Queue<GameObject> currentShots = new Queue<GameObject>();
     private bool canShoot = true;
+    private SoundManagerScript soundManagerScript;
 
     // Use this for initialization
     void Start()
     {
+        soundManagerScript = player.GetComponent<SoundManagerScript>();
         //Get and store a reference to the Rigidbody2D component so that we can access it.
         rb2d = GetComponent<Rigidbody2D> ();
         original_xspeed = xspeed;
@@ -83,6 +85,7 @@ public class ShootingDrone : MonoBehaviour
         GameObject shot = (GameObject)Instantiate(droneShot);
         droneShot.SetActive(true);
         shot.transform.position = new Vector3(drone.transform.position.x, drone.transform.position.y, 0);
+        soundManagerScript.playSound("enemyShot");
         return shot;
     }
     
