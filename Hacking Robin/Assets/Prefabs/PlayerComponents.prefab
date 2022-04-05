@@ -4851,6 +4851,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yToDisappear: -4.5
   player: {fileID: 2818307371322565339}
+  originalParticleVelocity: 7
+  timeToGoBack: 0.3
 --- !u!1 &2818307371322565339
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,9 @@ public class ParticleScript : MonoBehaviour
 
     public float yToDisappear;
     public GameObject player;
+    public float originalParticleVelocity;
+
+    public float timeToGoBack;
 
     void Start()
     {
@@ -31,6 +34,8 @@ public class ParticleScript : MonoBehaviour
     {
         InitializeIfNeeded();
 
+        print(originalParticleVelocity);
+
         // GetParticles is allocation free because we reuse the m_Particles buffer between updates
         int numParticlesAlive = m_System.GetParticles(m_Particles);
 
@@ -48,8 +53,17 @@ public class ParticleScript : MonoBehaviour
                 m_Particles[i].remainingLifetime = -1.0f;
                 // TODO: Add to score 
             }
+
+            float timeAlive = m_Particles[i].startLifetime - m_Particles[i].remainingLifetime;
+
             m_Particles[i].velocity = new Vector3(characterMovementScript.getHorizontalSpeed(), m_Particles[i].velocity.y, 0);
+            
+            if(timeAlive > timeToGoBack)
+                m_Particles[i].velocity = new Vector3(originalParticleVelocity, m_Particles[i].velocity.y, 0);
+
+
         }
+
 
         // Apply the particle changes to the Particle System
         m_System.SetParticles(m_Particles, numParticlesAlive);
