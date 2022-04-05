@@ -34,6 +34,14 @@ public class ParticleScript : MonoBehaviour
         // GetParticles is allocation free because we reuse the m_Particles buffer between updates
         int numParticlesAlive = m_System.GetParticles(m_Particles);
 
+        if(Input.GetKeyDown(KeyCode.Space)){
+            m_System.Play();
+     }
+     
+        if(Input.GetKeyUp(KeyCode.Space)){
+            m_System.Stop();
+     }
+
         for (int i = 0; i < numParticlesAlive; i++)
         {
             if (m_Particles[i].position.y < yToDisappear){
