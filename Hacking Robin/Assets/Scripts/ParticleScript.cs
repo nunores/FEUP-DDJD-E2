@@ -34,8 +34,6 @@ public class ParticleScript : MonoBehaviour
     {
         InitializeIfNeeded();
 
-        print(originalParticleVelocity);
-
         // GetParticles is allocation free because we reuse the m_Particles buffer between updates
         int numParticlesAlive = m_System.GetParticles(m_Particles);
 
