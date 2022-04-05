@@ -89,7 +89,25 @@ public class InfiniteScrolling : MonoBehaviour
             generation = (GameObject)Instantiate(possibleObstacles[Random.Range(0, possibleObstacles.Length)]);
         }
         generation.SetActive(true);
-        generation.transform.position = new Vector3((backgroundWidth * (backgroundNumber + 1)) - (backgroundWidth / 2), Random.Range(-4f, 4f), 0); //TODO: hardcoded
+        switch (generation.tag)
+        {
+            case "Coins":
+                generation.transform.position = new Vector3((backgroundWidth * (backgroundNumber + 1)) - (backgroundWidth / 2), Random.Range(-2f, 2.5f), 0); 
+                break;
+            case "Coffee":
+                generation.transform.position = new Vector3((backgroundWidth * (backgroundNumber + 1)) - (backgroundWidth / 2), Random.Range(-3f, 3f), 0); 
+                break;
+            case "Beer":
+                generation.transform.position = new Vector3((backgroundWidth * (backgroundNumber + 1)) - (backgroundWidth / 2), Random.Range(-3f, 3f), 0); 
+                break;
+            case "Enemy":
+                generation.transform.position = new Vector3((backgroundWidth * (backgroundNumber + 1)) - (backgroundWidth / 2), Random.Range(-3f, 3f), 0); 
+                break;  
+            default:
+                generation.transform.position = new Vector3((backgroundWidth * (backgroundNumber + 1)) - (backgroundWidth / 2), Random.Range(-3f, 3f), 0); 
+                break;
+        }
+        
         return generation;
     }
 

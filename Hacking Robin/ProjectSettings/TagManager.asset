@@ -11,6 +11,7 @@ TagManager:
   - Beer
   - Background
   - ShotEnemy
+  - Coins
   layers:
   - Default
   - TransparentFX

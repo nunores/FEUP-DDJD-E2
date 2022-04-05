@@ -494,6 +494,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 293455361409291129, guid: c21cf7011ea3a0139bfa43590bcfa26a, type: 3}
+      propertyPath: m_TagString
+      value: Coins
+      objectReference: {fileID: 0}
+    - target: {fileID: 293455361421752031, guid: c21cf7011ea3a0139bfa43590bcfa26a, type: 3}
+      propertyPath: m_TagString
+      value: Coins
+      objectReference: {fileID: 0}
+    - target: {fileID: 293455362280277537, guid: c21cf7011ea3a0139bfa43590bcfa26a, type: 3}
+      propertyPath: m_TagString
+      value: Coins
+      objectReference: {fileID: 0}
     - target: {fileID: 7873592340100272409, guid: c21cf7011ea3a0139bfa43590bcfa26a, type: 3}
       propertyPath: m_RootOrder
       value: 4
