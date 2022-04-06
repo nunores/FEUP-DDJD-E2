@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class SoundManagerScript : MonoBehaviour
 {
-
     private AudioClip playerGunSound;
     private AudioClip pickCoinSound;
     private AudioClip pickPowerUpSound;
     private AudioClip gettingHitSound;
     private AudioClip destroyingEnemySound;
     private AudioClip enemyShotSound;
-    private AudioSource audioSrc;
+    private AudioSource[] audioSrc;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +22,7 @@ public class SoundManagerScript : MonoBehaviour
         destroyingEnemySound = Resources.Load<AudioClip>("destroyingEnemy");
         enemyShotSound = Resources.Load<AudioClip>("enemyShot");
 
-        audioSrc = GetComponent<AudioSource>();
+        audioSrc = GetComponents<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,22 +36,28 @@ public class SoundManagerScript : MonoBehaviour
         switch(sound)
         {
             case "playerGun":
-                audioSrc.PlayOneShot(playerGunSound);
+                audioSrc[0].volume = 1f;
+                audioSrc[0].PlayOneShot(playerGunSound);
                 break;
             case "pickCoin":
-                audioSrc.PlayOneShot(pickCoinSound);
+                audioSrc[1].volume = 0.2f;
+                audioSrc[1].PlayOneShot(pickCoinSound);                
                 break;
             case "pickPowerUp":
-                audioSrc.PlayOneShot(pickPowerUpSound);
+                audioSrc[1].volume = 1f;
+                audioSrc[1].PlayOneShot(pickPowerUpSound);
                 break;
             case "gettingHit":
-                audioSrc.PlayOneShot(gettingHitSound);
+                audioSrc[1].volume = 1f;
+                audioSrc[1].PlayOneShot(gettingHitSound);
                 break;
             case "destroyingEnemy":
-                audioSrc.PlayOneShot(destroyingEnemySound);
+                audioSrc[1].volume = 0.7f;
+                audioSrc[1].PlayOneShot(destroyingEnemySound);
                 break;
             case "enemyShot":
-                audioSrc.PlayOneShot(enemyShotSound);
+                audioSrc[1].volume = 0.5f;
+                audioSrc[1].PlayOneShot(enemyShotSound);
                 break;
             default:
                 break;

@@ -118,6 +118,7 @@ public class InfiniteScrolling : MonoBehaviour
         {
             case "Enemy":
                 col.gameObject.SetActive(false);
+                soundManagerScript.playSound("destroyingEnemy");
                 characterMovementScript.loseHP();
                 StartCoroutine(cameraShakeScript.Shake(15f, 30f));
                 if (!characterMovementScript.shieldOn && characterMovementScript.lives > 1)
@@ -134,6 +135,7 @@ public class InfiniteScrolling : MonoBehaviour
 
             case "Obstacle":
                 col.gameObject.SetActive(false);
+                soundManagerScript.playSound("destroyingEnemy");
                 characterMovementScript.loseHP();
                 StartCoroutine(cameraShakeScript.Shake(15f, 30f));
                 if (!characterMovementScript.shieldOn && characterMovementScript.lives > 1)
