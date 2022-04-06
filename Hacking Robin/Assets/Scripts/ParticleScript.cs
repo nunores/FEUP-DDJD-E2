@@ -16,9 +16,17 @@ public class ParticleScript : MonoBehaviour
 
     public float timeToGoBack;
 
+    private int currentNumParticles = 0;
+
+    private AudioSource audioSrc;
+    private AudioClip paperFlipSound;
+
+
     void Start()
     {
         characterMovementScript = player.GetComponent<CharacterMovement>();
+        paperFlipSound = Resources.Load<AudioClip>("paperFlip");
+        audioSrc = GetComponent<AudioSource>();
     }
     void InitializeIfNeeded()
     {
@@ -37,17 +45,25 @@ public class ParticleScript : MonoBehaviour
         // GetParticles is allocation free because we reuse the m_Particles buffer between updates
         int numParticlesAlive = m_System.GetParticles(m_Particles);
 
-        if(Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             m_System.Play();
-     }
-     
-        if(Input.GetKeyUp(KeyCode.Space)){
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
             m_System.Stop();
-     }
+        }
+
+        if (m_System.particleCount > currentNumParticles) // Particle is born
+        {
+            audioSrc.PlayOneShot(paperFlipSound);
+        }
 
         for (int i = 0; i < numParticlesAlive; i++)
         {
-            if (m_Particles[i].position.y < yToDisappear){
+            if (m_Particles[i].position.y < yToDisappear)
+            {
                 m_Particles[i].remainingLifetime = -1.0f;
                 // TODO: Add to score 
             }
@@ -55,12 +71,14 @@ public class ParticleScript : MonoBehaviour
             float timeAlive = m_Particles[i].startLifetime - m_Particles[i].remainingLifetime;
 
             m_Particles[i].velocity = new Vector3(characterMovementScript.getHorizontalSpeed(), m_Particles[i].velocity.y, 0);
-            
-            if(timeAlive > timeToGoBack)
+
+            if (timeAlive > timeToGoBack)
                 m_Particles[i].velocity = new Vector3(originalParticleVelocity, m_Particles[i].velocity.y, 0);
 
 
         }
+
+        currentNumParticles = m_System.particleCount;
 
 
         // Apply the particle changes to the Particle System
