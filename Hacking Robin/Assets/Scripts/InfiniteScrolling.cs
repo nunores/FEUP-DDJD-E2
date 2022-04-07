@@ -121,7 +121,7 @@ public class InfiniteScrolling : MonoBehaviour
                 soundManagerScript.playSound("destroyingEnemy");
                 characterMovementScript.loseHP();
                 StartCoroutine(cameraShakeScript.Shake(15f, 30f));
-                if (!characterMovementScript.shieldOn && characterMovementScript.lives > 1)
+                if (!characterMovementScript.shieldOn && characterMovementScript.lives > 0)
                     StartCoroutine(BlinkPlayer(5, 0.1f));
 
                 break;
@@ -129,7 +129,7 @@ public class InfiniteScrolling : MonoBehaviour
                 col.gameObject.SetActive(false);
                 characterMovementScript.loseHP();
                 StartCoroutine(cameraShakeScript.Shake(15f, 30f));
-                if (!characterMovementScript.shieldOn && characterMovementScript.lives > 1)
+                if (!characterMovementScript.shieldOn && characterMovementScript.lives > 0)
                     StartCoroutine(BlinkPlayer(5, 0.1f));
                 break;
 
@@ -138,7 +138,7 @@ public class InfiniteScrolling : MonoBehaviour
                 soundManagerScript.playSound("destroyingEnemy");
                 characterMovementScript.loseHP();
                 StartCoroutine(cameraShakeScript.Shake(15f, 30f));
-                if (!characterMovementScript.shieldOn && characterMovementScript.lives > 1)
+                if (!characterMovementScript.shieldOn && characterMovementScript.lives > 0)
                     StartCoroutine(BlinkPlayer(5, 0.1f));
 
                 break;
