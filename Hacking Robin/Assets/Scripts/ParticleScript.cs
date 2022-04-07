@@ -27,6 +27,7 @@ public class ParticleScript : MonoBehaviour
         characterMovementScript = player.GetComponent<CharacterMovement>();
         paperFlipSound = Resources.Load<AudioClip>("paperFlip");
         audioSrc = GetComponent<AudioSource>();
+        audioSrc.volume = 0.3f;
     }
     void InitializeIfNeeded()
     {
