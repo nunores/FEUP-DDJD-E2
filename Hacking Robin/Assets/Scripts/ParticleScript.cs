@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(ParticleSystem))]
 public class ParticleScript : MonoBehaviour
@@ -21,9 +22,13 @@ public class ParticleScript : MonoBehaviour
     private AudioSource audioSrc;
     private AudioClip paperFlipSound;
 
+    public Text scoreText;
+    private int scoreCounter;
+
 
     void Start()
     {
+        scoreCounter = 0;
         characterMovementScript = player.GetComponent<CharacterMovement>();
         paperFlipSound = Resources.Load<AudioClip>("paperFlip");
         audioSrc = GetComponent<AudioSource>();
@@ -59,6 +64,8 @@ public class ParticleScript : MonoBehaviour
         if (m_System.particleCount > currentNumParticles) // Particle is born
         {
             audioSrc.PlayOneShot(paperFlipSound);
+            scoreCounter++;
+            scoreText.text = "Score: " + scoreCounter.ToString() + " ";
         }
 
         for (int i = 0; i < numParticlesAlive; i++)
@@ -66,7 +73,7 @@ public class ParticleScript : MonoBehaviour
             if (m_Particles[i].position.y < yToDisappear)
             {
                 m_Particles[i].remainingLifetime = -1.0f;
-                // TODO: Add to score 
+                
             }
 
             float timeAlive = m_Particles[i].startLifetime - m_Particles[i].remainingLifetime;

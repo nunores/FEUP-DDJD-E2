@@ -5150,7 +5150,7 @@ MonoBehaviour:
   maxNumberOfActiveObstacles: 3
   counterText: {fileID: 0}
   coffeeDuration: 5
-  beerDuration: 20
+  beerDuration: 10
   coffeeReduceFactor: 5
   coin1UPCount: 50
   cameraShakeObject: {fileID: 0}

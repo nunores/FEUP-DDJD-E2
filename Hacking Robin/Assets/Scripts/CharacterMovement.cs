@@ -127,7 +127,7 @@ public class CharacterMovement : MonoBehaviour
             float xPos = hearts[hearts.Count-1].transform.position.x;
             float yPos = hearts[hearts.Count-1].transform.position.y;
             float zPos = hearts[hearts.Count-1].transform.position.z;
-            newHeart.transform.position = new Vector3(xPos-1, yPos, zPos);
+            newHeart.transform.position = new Vector3(xPos-0.5f, yPos, zPos);
             hearts.Add(newHeart);
         } else 
             Debug.Log("Max Lives Limit Reached");
