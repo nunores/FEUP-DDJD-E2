@@ -34,7 +34,7 @@ public class Menu_Buttons : MonoBehaviour
     {
         Time.timeScale = 0;
         Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
+        // UnityEditor.EditorApplication.isPlaying = false;
     }
 
     public void ShowMenuPanel()
