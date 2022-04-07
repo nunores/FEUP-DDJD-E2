@@ -44,7 +44,7 @@ public class SoundManagerScript : MonoBehaviour
                 audioSrc[1].PlayOneShot(pickCoinSound);                
                 break;
             case "pickPowerUp":
-                audioSrc[1].volume = 1f;
+                audioSrc[1].volume = 0.5f;
                 audioSrc[1].PlayOneShot(pickPowerUpSound);
                 break;
             case "gettingHit":

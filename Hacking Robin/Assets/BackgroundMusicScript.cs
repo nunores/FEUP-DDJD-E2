@@ -14,7 +14,7 @@ public class BackgroundMusicScript : MonoBehaviour
         audioSrc = GetComponent<AudioSource>();
         audioSrc.loop = true;
         audioSrc.clip = backgroundMusic;
-        audioSrc.volume = 0.2f;
+        audioSrc.volume = 0.1f;
         audioSrc.Play();
     }
 

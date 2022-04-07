@@ -4979,7 +4979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   verticalSpeed: 50
   horizontalSpeed: 10
-  xAccelaration: 0.005
+  xAccelaration: 0.001
   maxXSpeed: 23
   player: {fileID: 2818307371322565339}
   playerShot: {fileID: 2818307371965392283}
